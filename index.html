@@ -3,38 +3,63 @@
   <head>
       <title>Chick Tech Workshop at Symetra</title>
       <link rel="stylesheet" href="Default.css" >
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+          //function DoFun() {
+          //    //alert("What??  No one wants to be an SA!");
+          //    $("#Dialog1").dialog("open");
+          //}
+          $( function() {
+              $( "#Dialog1" ).dialog({
+                  autoOpen: false,
+                  show: {
+                      effect: "blind",
+                      duration: 1000
+                  },
+                  hide: {
+                      effect: "explode",
+                      duration: 1000
+                  }
+              });
+ 
+              $( "#SaLink" ).on( "click", function() {
+                  $( "#Dialog1" ).dialog( "open" );
+              });
+          } );
+
+      </script>
   </head>
 <body>
 
     <header class="header-container">
         <div><a href="https://ChickTech.org"><img src="ChickTechLogo.PNG" alt="ChickTech logo" /></a></div>
         <div><img src="SymetraLogo.PNG" alt="Symetra logo" /></div>
-        
-        <script type="text/javascript">
-            function DoFun() {
-                alert("What??  No one wants to be an SA!");
-            }
-        </script>
-    </header>
-    <div class="flex-container">
-        <nav>
-            <ul>
-                <li><a href="Index.html">Welcome</a></li>
-                <li onclick="DoFun()">Systems Analyst Workshop</li>
-                <li><a href="Dev0.html">Developer Workshop</a></li>
-                <li><a href="Index.html">Quality Assurance Workshop</a></li>
-                <li><a href="Index.html">Resources</a></li>
-            </ul>
-        </nav>
-        <section>
-            <h1>Welcome to the ChickTech Workshop at Symetra</h1>
-            <h2>June xx, 2018</h2>
-            <article>
-                <h3>Agenda</h3>
-            </article>
-        </section>
 
-    </div>
+
+    </header>
+<div class="flex-container">
+    <nav>
+        <ul>
+            <li><a href="Index.html">Welcome</a></li>
+            <li id="SaLink">Systems Analyst Workshop</li>
+            <li><a href="Dev0.html">Developer Workshop</a></li>
+            <li><a href="Index.html">Quality Assurance Workshop</a></li>
+            <li><a href="Index.html">Resources</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h1>Welcome to the ChickTech Workshop at Symetra</h1>
+        <h2>June xx, 2018</h2>
+        <article>
+            <h3>Agenda</h3>
+        </article>
+    </section>
+
+</div>
+<div id="Dialog1" title="Basic dialog">
+    <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
 
 <footer>Copyright © 2018 Symetra Life Insurance Company</footer>
 
