@@ -1,19 +1,42 @@
-<html5>
+<!DOCTYPE html>
+<html>
   <head>
-    <title>Chick Tech Workshop at Symetra</title>
+      <title>Chick Tech Workshop at Symetra</title>
+      <link rel="stylesheet" href="Default.css" >
   </head>
-  <body>
+<body>
 
-    <div style="float: left;">ChickTech logo
-    <div>
-      <div style="float: right;">Symetra logo</div>
-      <div style="clear: both;" />
-    <h1>Welcome to the ChickTech Workshop at Symetra</h1>
-    <div>
-      <button title="SA">SA</button>
-      <button title="QA">QA</button>
-      <button title="Dev"><a href="Dev0.html">Dev</a></button>
+    <header class="header-container">
+        <div><a href="https://ChickTech.org"><img src="ChickTechLogo.PNG" alt="ChickTech logo" /></a></div>
+        <div><img src="SymetraLogo.PNG" alt="Symetra logo" /></div>
+        
+        <script type="text/javascript">
+            function DoFun() {
+                alert("What??  No one wants to be an SA!");
+            }
+        </script>
+    </header>
+    <div class="flex-container">
+        <nav>
+            <ul>
+                <li><a href="Index.html">Welcome</a></li>
+                <li onclick="DoFun()">Systems Analyst Workshop</li>
+                <li><a href="Dev0.html">Developer Workshop</a></li>
+                <li><a href="Index.html">Quality Assurance Workshop</a></li>
+                <li><a href="Index.html">Resources</a></li>
+            </ul>
+        </nav>
+        <section>
+            <h1>Welcome to the ChickTech Workshop at Symetra</h1>
+            <h2>June xx, 2018</h2>
+            <article>
+                <h3>Agenda</h3>
+            </article>
+        </section>
+
     </div>
 
-  </body>
-</html5>
+<footer>Copyright © 2018 Symetra Life Insurance Company</footer>
+
+</body>
+</html>
