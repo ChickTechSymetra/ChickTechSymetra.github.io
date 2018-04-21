@@ -2,36 +2,96 @@
 <html>
 <head>
     <title>Developer Workshop</title>
-    <link rel="stylesheet" href="Default.css?v1.0" >
+    <link rel="stylesheet" href="Default.css?v1.3" >
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-</head>
+    <script>
+
+        $(function () {
+            $( "#SummaryMe" ).dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $("#ThatMe").on("click", function () {
+                //first, set values in the SummaryText field on the dialog
+                var s = "I am " + $("#NickName").val() + "!";
+                $("#SummaryText").val(s);
+                //then open the dialog
+                    $("#SummaryMe").dialog("open");
+                });
+
+            $( "#SaLink" ).on( "click", function() {
+                $( "#Dialog1" ).dialog( "open" );
+            });
+
+            $("#DevLink").on("click", function() {
+                window.location.href = "Dev0.html";
+            });
+
+            $("#ResLink").on("click", function() {
+                window.location.href = "Resources.html";
+            });
+        });
+
+
+
+    </script>
+    </head>
 <body>
     <header class="header-container">
         <div><a href="https://ChickTech.org"><img src="ChickTechLogo.PNG" width="75%" alt="ChickTech logo" /></a></div>
-        <div><img src="SymetraLogo.PNG" width="75%" alt="Symetra logo" /></div>
+        <div><img src="SymetraLogo.PNG" width="75%"  alt="Symetra logo" /></div>
     </header>
-    <div class="flex-container">
-        <nav>
-            <ul>
-                <li><a href="Index.html">Welcome</a></li>
-                <li id="SaLink">SA Workshop</li>
-                <li><a href="Dev0.html">DevWorkshop</a></li>
-                <li><a href="Index.html">QA Workshop</a></li>
-                <li><a href="Index.html">Resources</a></li>
-            </ul>
-        </nav>
-        <section>
-            <h1>Developer Workshop</h1>
-            
-            <article>
+<div class="flex-container">
+    <nav>
+        <ul>
+            <li><a href="Index.html">Welcome</a></li>
+            <li id="SaLink">SA Workshop</li>
+            <li><a href="Dev0.html">DevWorkshop</a></li>
+            <li><a href="Index.html">QA Workshop</a></li>
+            <li><a href="Index.html">Resources</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h1>Developer Workshop</h1>
+        <article>
                
-            </article>
-        </section>
+            <div class="centerBox" style="width: 300px;">
+                <h3>Cool Stuff About Me</h3>
+            <div class="labeler">My Nickname</div>
+                <div><input type="text" id="NickName" autofocus /></div>
+            <div class="labeler">My Lucky Number </div>
+                <div><input type="number" id="LuckyNumber" min="0" max="100" /></div>
+            <div class="labeler">My Favorite Color</div>
+            <div><input type="color" id="FavColor" /></div>
+                <div class="labeler">My Birthdate</div>
+                <div><input type="date" id="Birthdate" /></div>
+                <div class="labeler">A quote or something I think is cool</label></div>
+                <div><input type="text" id="Quote" /></div>
+            <div class="labeler">Favorite Icecream Flavor</div>
+    <!--<div><input type="radio" id="IceCream" /></div>-->
+    <input type="button" id="ThatMe" value="That's Me" />
+</div>
+        </article>
+    </section>
 
-    </div>
- 
+</div>
 
-    <footer>Copyright © 2018 Symetra Life Insurance Company</footer>
+<footer>Copyright © 2018 Symetra Life Insurance Company</footer>
+
+<div id="SummaryMe" title="Basic dialog">
+    <p>
+        <input type="text" id="SummaryText" />
+    </p>
+</div>
+
 </body>
 </html>

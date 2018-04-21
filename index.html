@@ -26,6 +26,18 @@
               $( "#SaLink" ).on( "click", function() {
                   $( "#Dialog1" ).dialog( "open" );
               });
+
+              $("#DevLink").on("click", function() {
+                  window.location.href = "Dev0.html";
+              });
+
+              $("#QaLink").on("click", function() {
+                  window.location.href = "Qa0.html";
+              });
+
+              $("#ResLink").on("click", function() {
+                  window.location.href = "Resources.html";
+              });
           } );
 
       </script>
@@ -42,17 +54,38 @@
     <nav>
         <ul>
             <li><a href="Index.html">Welcome</a></li>
-            <li id="SaLink">Systems Analyst Workshop</li>
-            <li><a href="Dev0.html">Developer Workshop</a></li>
-            <li><a href="Index.html">Quality Assurance Workshop</a></li>
-            <li><a href="Index.html">Resources</a></li>
+            <li id="SaLink">SA Workshop</li>
+            <li id="DevLink"><a href="Dev0.html">Dev Workshop</a></li>
+            <li id ="QaLink"><a href="Index.html">QA Workshop</a></li>
+            <li id="ResLink">Resources</li>
         </ul>
     </nav>
     <section>
-        <h1>Welcome to the ChickTech Workshop at Symetra</h1>
-        <h2>June xx, 2018</h2>
+        <h1>Welcome to the ChickTech Seminar at Symetra</h1>
+        <h2>June 16, 2018</h2>
         <article>
             <h3>Agenda</h3>
+            <table class="prettytbl">
+                <tr><td> 8:00 to  9:00</td><td>Sign in, Breakfast</td></tr>
+                <tr class="row2"><td> 9:00 to  9:45</td><td>Keynote Speaker<br/>
+                    Margaret Meister, CEO</td></tr>
+                <tr><td> 9:45 to 10:00</td><td>Break</td></tr>
+                <tr class="row2"><td>10:00 to 10:45</td><td>Workshop 1</td></tr>
+                <tr><td>10:45 to 11:00</td><td>Break</td></tr>
+                <tr class="row2"><td>11:00 to 11:45</td><td>Security Speaker<br /> Kelli Burns, CISM, CISA</td></tr>
+                <tr><td>11:45 to 12:30</td><td>Lunch</td></tr>
+                <tr class="row2"><td>12:30 to  1:15</td><td>Workshop 2</td></tr>
+                <tr><td> 1:15 to  1:30</td><td>Break</td></tr>
+                <tr class="row2"><td> 1:30 to  2:15</td><td>Workshop 3</td></tr>
+                <tr><td> 2:15 to  2:30</td><td>Wrap Up</td></tr>
+
+            </table><br/>
+            <p class="left">There will be three workshops, covering three different roles in Technology:</p>
+                <ul class="left">
+                    <li>Systems Analyst (SA)</li>
+                    <li>Software Developer (Dev)</li>
+                    <li>Quality Assurance (QA)</li></ul>
+            <p class="left">Each student will attend each workshop.</p>
         </article>
     </section>
 
