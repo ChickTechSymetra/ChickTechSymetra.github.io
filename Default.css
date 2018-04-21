@@ -125,16 +125,21 @@ footer {
         bottom: 0px;
         margin-top: 25px;
         margin-left: 20px;
-    }.prettytbl {
+    }
+.prettytbl {
     border-style: double;
     border-radius: 10px;
     border-color: lightskyblue;
     max-width: 600px;
 
-}.prettytbl td {
+}
+.prettytbl td {
     padding: 3px;
-}.row2 {
+}
+.row2 {
     background-color: azure;
-}.left {
+}
+.left {
     text-align: left;
-}
+}
+
