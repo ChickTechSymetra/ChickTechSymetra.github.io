@@ -1,25 +1,136 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <title>QA Workshop</title>
-    <link rel="stylesheet" href="Default.css">
+  <head>
+      <title>QA Workshop</title>
+      <link rel="stylesheet" href="Default.css?v1.0" />
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+        //these are individual field edits, which will trigger when someone exits the field.
+        $(function () {
+            $( "#UserName" ).on("focusout", function() {
+                var val = this.value;
+                var pattern = new RegExp('^[A-Za-z0-9._\\-\\s\\@]{3,25}$');
+                if (!pattern.test(val))  $('#UserNameMsg').text("Username can be 3 to 25 alphanumeric characters, including characters @.-_");
+                else $('#UserNameMsg').text("");
+            });
+            $( "#Password" ).on("focusout", function() {
+                var val = this.value;
+                var pattern = new RegExp('^[A-Za-z0-9]{7,25}$');
+                if (!pattern.test(val))  $('#PasswordMsg').text("Password must be 7 to 25 alphanumeric characters");
+                else $('#PasswordMsg').text("");
+            });
+            $( "#FirstName" ).on("focusout", function() {
+                var val = this.value;
+                var pattern = new RegExp('^[A-Za-z0-9]{1,25}$');
+                if (!pattern.test(val))  $('#FirstNameMsg').text("First Name can be up to 25 characters");
+                else $('#FirstNameMsg').text("");
+            });
+            $( "#LastName" ).on("focusout", function() {
+                var val = this.value;
+                var pattern = new RegExp('^[A-Za-z/0-9\\s]{2,35}$');
+                if (!pattern.test(val))  $('#LastNameMsg').text("Last Name must be 2 to 35 characters");
+                else $('#LastNameMsg').text("");
+            });
+            $( "#Email" ).on("focusout", function() {
+                var val = this.value;
+                if (val == '')
+                     $('#EmailMsg').text("Email is required");
+                     else $('#EmailMsg').text("");
+            });
+            
+            //this will show/hide the bug list
+            $("#BugListToggle").click(function(){
+                $("#BugList").toggle();
+                if ($("#BugListToggle").text() == "Hide the bug list") $("#BugListToggle").text("Show the bug list");
+                else $("#BugListToggle").text("Hide the bug list");
+            });
+            
+            //this will check all fields when Create Account is clicked, and give a message if successful
+            $("#CreateButton").click(function(){
+                if (($("#UserNameMsg").text() == "") & ($("#PasswordMsg").text() == "") & ($("#FirstNameMsg").text() == "")
+                    & ($("#LastNameMsg").text() == "") & ($("#BirthdateMsg").text() == "") & ($("#EmailMsg").text() == ""))
+                    alert("Thank you for registering, " + $("#FirstNamexx").val() + " " + $("#LastName").val());
+            else alert("Please fix the your entries");
+            });
+        });
+      </script>
 </head>
 <body>
-<div>
-    <h1>Quality Assurance Workshop</h1>
-    <div class="centerBox">
-        <h3>Create an account</h3>
-        <div><label>First Name</label></div>
-        <div><input type="text" id="FirstName"/></div>
-        <div><label>Last Name</label></div>
-        <div><input type="text" id="LastName"/></div>
-        <div><label>Birthdate</label></div>
-        <div><input type="text" id="Birthdate" /></div>
-        <div><label>Email Address</label></div>
-        <div><input type="text" id="Email"/></div>
-        
-        <input type="button" value="Next"/>
+
+    <header class="header-container">
+        <div><a href="https://ChickTech.org"><img src="ChickTechLogo.PNG" alt="ChickTech logo" /></a></div>
+        <div><img src="SymetraLogo.PNG" alt="Symetra logo" /></div>
+
+
+    </header>
+    <div class="flex-container">
+    <nav>
+        <ul>
+            <li><a href="Index.html">Welcome</a></li>
+            <li id="SaLink">SA Workshop</li>
+            <li id="DevLink"><a href="Dev0.html">Dev Workshop</a></li>
+            <li id ="QaLink"><a href="Qa0.html">QA Workshop</a></li>
+            <li id="ResLink"><a href="Resources.html">Resources</a></li>
+        </ul>
+    </nav>
     </div>
-</div>
+    <section>
+        
+        <h1>Quality Assurance Workshop</h1>
+        <div style="float: left;">
+            <p class="instruction">~ Test this page below, and find the bugs.</p>
+            <div class="leftPageBox" id="FirstPage" >
+                <h3>Create an account</h3>
+                <div class="labeler">User Name<span class="req">*</span></div>
+                <div><input type="text" id="UserName"/><span id="UserNameMsg" class="error"></span></div>
+                <div class="labeler">Password<span class="req">*</span></div>
+                <div><input type="text" id="Password"/><span id="PasswordMsg" class="error"></span></div>
+                <br/><br>
+                <div class="labeler">First Name<span class="req">*</span></div>
+                <div><input type="text" id="FirstName"/><span id="FirstNameMsg" class="error"></span></div>
+                <div class="labeler">Last Name<span class="req">*</span></div>
+                <div><input type="text" id="LastName"/></div><div id="LastNameMsg" class="error"></div>
+                <div class="labeler">Birthdate</div>
+                <div><input type="date" id="Birthdate" /></div><div id="BirthdateMsg" class="error"></div>
+                <div class="labeler">Email Address</div>
+                <div><input type="text" id="Email"/></div><div id="EmailMsg" class="error"></div>
+                <br/>
+                <p style="font-size: small;"><span>Terms and Conditions</span> &nbsp;  &nbsp;  &nbsp;  &nbsp; <span><a href="Policy1.html">Privacy Policy</a></span></p>
+                
+                <input type="button" id="CreateButton" value="Create Account"/>
+            </div>
+        </div>
+        <div style="float: left; margin: 50px 20px 10px; text-align: left;  width: 500px;">
+            <p id="BugListToggle" class="fakeLink">Show me the bug list</p>
+            <div id="BugList" style="display: none; " ><br/>
+                <p class="instruction">These are some of the bugs.  What others can you find?</p>
+                <ul id="BugListUl">
+                    <li>User Name is allowing a space to be included.</li>
+                    <li>Password is in clear text--this should be masked!</li>
+                    <li>The password rules are weak.</li>
+                    <li>First Name is allowing numbers, and it should not.  But it
+                        does not allow spaces, and some people have two word names.</li>
+                    <li>Last Name is not allowing punctuation.  What about names like O'Malley,
+                        Pinkett-Smith, or Jones, Jr.?</li>
+                    <li>Birthdate is allowing invalid dates, such as November 31.  It's also allowing future dates.</li>
+                    <li>Email is not marked as required with a red asterisk, but it is required.
+                        And we should be checking for a properly formatted email address.</li>
+                    <li>The Terms and Conditions link does not work in Internet Explorer.</li>
+                    <li>The Privacy Policy link goes to a page that does not exist.</li>
+                    <li>Usability: if you tab though the fields, the First and Last names are out of order.</li>
+                    <li>You can click the Create Account button when no data is entered.</li>
+                    <li>When you register, the message has "undefined" where the first name should be.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <div style="clear: both;"></div>
+    <p class="todo">To Do:   Error messages should not wrap under the field, and Email message has bad positioning.  Add Bad tab order</p>
+    <p class="todo">When it passes validation, change message box to a nicer dialog.
+    </p>
+    <p class="todo">Add link to Terms and Conditions, and have it throw an error in IE only.
+    </p>
+
 </body>
 </html>

@@ -7,23 +7,8 @@
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script>
           //function DoFun() {
-          //    //alert("What??  No one wants to be an SA!");
-          //    $("#Dialog1").dialog("open");
-          //}
-          $( function() {
-              $( "#Dialog1" ).dialog({
-                  autoOpen: false,
-                  show: {
-                      effect: "blind",
-                      duration: 1000
-                  },
-                  hide: {
-                      effect: "explode",
-                      duration: 1000
-                  }
-              });
  
-              $( "#SaLink" ).on( "click", function() {
+ /*             $( "#SaLink" ).on( "click", function() {
                   $( "#Dialog1" ).dialog( "open" );
               });
 
@@ -39,6 +24,7 @@
                   window.location.href = "Resources.html";
               });
           } );
+*/
 
       </script>
   </head>
@@ -56,8 +42,8 @@
             <li><a href="Index.html">Welcome</a></li>
             <li id="SaLink">SA Workshop</li>
             <li id="DevLink"><a href="Dev0.html">Dev Workshop</a></li>
-            <li id ="QaLink"><a href="Index.html">QA Workshop</a></li>
-            <li id="ResLink">Resources</li>
+            <li id ="QaLink"><a href="Qa0.html">QA Workshop</a></li>
+            <li id="ResLink"><a href="Resources.html">Resources</a></li>
         </ul>
     </nav>
     <section>
@@ -86,13 +72,15 @@
                     <li>Software Developer (Dev)</li>
                     <li>Quality Assurance (QA)</li></ul>
             <p class="left">Each student will attend each workshop.</p>
+            <p class="todo">To Do: Get the real agenda.  What titles for Margaret and Kelli?  Is it OK to use the logos?
+            Center the agenda, larger padding.  Decide on a color scheme for site.  Larger or smaller logos?  Should we use a copyright?
+            On each page or only the first, or on the test plan and other artifacts?
+            </p>
         </article>
     </section>
 
 </div>
-<div id="Dialog1" title="Basic dialog">
-    <p>This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
-</div>
+
 
 <footer>Copyright © 2018 Symetra Life Insurance Company</footer>
 

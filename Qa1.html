@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+      <title>QA Workshop</title>
+      <link rel="stylesheet" href="Default.css?v1.0" />
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+    <header class="header-container">
+        <div><a href="https://ChickTech.org"><img src="ChickTechLogo.PNG" alt="ChickTech logo" /></a></div>
+        <div><img src="SymetraLogo.PNG" alt="Symetra logo" /></div>
+
+
+    </header>
+    <div class="flex-container">
+    <nav>
+        <ul>
+            <li><a href="Index.html">Welcome</a></li>
+            <li id="SaLink">SA Workshop</li>
+            <li id="DevLink"><a href="Dev0.html">Dev Workshop</a></li>
+            <li id ="QaLink"><a href="Qa0.html">QA Workshop</a></li>
+            <li id="ResLink"><a href="Resources.html">Resources</a></li>
+        </ul>
+    </nav>
+    </div>
+    <section style="width: 300px;">
+        
+        <h1>Quality Assurance Workshop</h1>
+        <div class="centerBox"  style="width: 300px;">
+            <h3>Create an account</h3>
+            <div class="labeler">First Name</div>
+            <div><input type="text" id="FirstName"/><span id="FirstNameMsg" class="error">Invalid First Name</span></div>
+            <div class="labeler">Last Name</div>
+            <div><input type="text" id="LastName"/></div><div id=":astNameMsg" class="error"></div>
+            <div class="labeler">Birthdate</div>
+            <div><input type="text" id="Birthdate" /></div><div id="BirthdateMsg" class="error"></div>
+            <div class="labeler">Email Address</div>
+            <div><input type="text" id="Email"/></div><div id="EmailMsg" class="error"></div>
+            
+            <input type="button" value="Next"/>
+        </div>
+    </section>
+</body>
+</html>
