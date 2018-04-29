@@ -22,8 +22,8 @@
             });
             $( "#FirstName" ).on("focusout", function() {
                 var val = this.value;
-                var pattern = new RegExp('^[A-Za-z0-9]{1,25}$');
-                if (!pattern.test(val))  $('#FirstNameMsg').text("First Name can be up to 25 characters");
+                var pattern = new RegExp('^[A-Za-z0-9\\-]{1,25}$');
+                if (!pattern.test(val))  $('#FirstNameMsg').text("First Name can be up to 25 alphabetic characters");
                 else $('#FirstNameMsg').text("");
             });
             $( "#LastName" ).on("focusout", function() {
@@ -35,7 +35,7 @@
             $( "#Email" ).on("focusout", function() {
                 var val = this.value;
                 if (val == '')
-                     $('#EmailMsg').text("Email is required");
+                     $('#EmailMsg').text("Email address is required");
                      else $('#EmailMsg').text("");
             });
             
@@ -48,11 +48,45 @@
             
             //this will check all fields when Create Account is clicked, and give a message if successful
             $("#CreateButton").click(function(){
+                //first, check required fields
+                if ($("#UserName").val() == "") $("#UserNameMsg").text("User Name is required");
+                if ($("#Password").val() == "") $("#PasswordMsg").text("Password is required");
+                if ($("#FirstName").val() == "") $("#FirstNameMsg").text("First Name is required");
+                if ($("#LastName").val() == "") $("#LastNameMsg").text("Last Name is required.") ;
+                if ($("#Email").val() == "") $("#EmailMsg").text("Email address is required");
+              
+                //next, register user if no errors found
                 if (($("#UserNameMsg").text() == "") & ($("#PasswordMsg").text() == "") & ($("#FirstNameMsg").text() == "")
-                    & ($("#LastNameMsg").text() == "") & ($("#BirthdateMsg").text() == "") & ($("#EmailMsg").text() == ""))
-                    alert("Thank you for registering, " + $("#FirstNamexx").val() + " " + $("#LastName").val());
-            else alert("Please fix the your entries");
+                    & ($("#LastNameMsg").text() == "") & ($("#BirthdateMsg").text() == "") & ($("#EmailMsg").text() == "")){
+                    var s = 'wtf';
+                    $("#SummaryMe").html(s);
+                    $("#SummaryMe").html('<p>Thank you for registering, ' + $('#FirstNamex').val() + ' ' + $('#LastName').val() + '</p>');
+                    $("#SummaryMe").dialog("open");
+                }
+                //else, give them a message if errors were found
+                else alert("Please fix the your entries");
             });
+            
+            $('#TermsLink').click(function(){
+                if(navigator.userAgent.indexOf("Chrome") != -1 )  $("#Terms").dialog("open");
+                else alert("Undefined function");
+            });
+            $( "#SummaryMe" ).dialog({
+                autoOpen: false,
+                show: {
+                    effect: "fade",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "fade",
+                    duration: 1000
+                }
+            });
+            $( "#Terms" ).dialog({
+                autoOpen: false                
+            });
+           
+
         });
       </script>
 </head>
@@ -61,11 +95,12 @@
     <object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
     <section>
         
-        <h1>Quality Assurance Workshop</h1>
+        <h1>QA Workshop: Find the Bugs</h1>
         <div style="float: left;">
             <p class="instruction">~ Test this page below, and find the bugs.</p>
             <div class="leftPageBox" id="FirstPage" >
                 <h3>Create an account</h3>
+                <div class="error" style="width:85%; text-align: right; ">* required</div>
                 <div class="labeler">User Name<span class="req">*</span></div>
                 <div><input type="text" id="UserName"/><span id="UserNameMsg" class="error"></span></div>
                 <div class="labeler">Password<span class="req">*</span></div>
@@ -80,7 +115,7 @@
                 <div class="labeler">Email Address</div>
                 <div><input type="text" id="Email"/></div><div id="EmailMsg" class="error"></div>
                 <br/>
-                <p style="font-size: small;"><span>Terms and Conditions</span> &nbsp;  &nbsp;  &nbsp;  &nbsp; <span><a href="Policy1.html">Privacy Policy</a></span></p>
+                <p style="font-size: small;"><span class="fakeLink" id="TermsLink">Terms and Conditions</span> &nbsp;  &nbsp;  &nbsp;  &nbsp; <span><a href="Policy1.html">Privacy Policy</a></span></p>
                 
                 <input type="button" id="CreateButton" value="Create Account"/>
             </div>
@@ -90,9 +125,8 @@
             <div id="BugList" style="display: none; " ><br/>
                 <p class="instruction">These are some of the bugs.  What others can you find?</p>
                 <ul id="BugListUl">
-                    <li>User Name is allowing a space to be included.</li>
-                    <li>Password is in clear text--this should be masked!</li>
-                    <li>The password rules are weak.</li>
+                    <li title="Testing Type: XYZ">User Name is allowing a space to be included.</li>
+                    <li>Password is in clear text--this should be masked!  Also, the password rules are weak.</li>
                     <li>First Name is allowing numbers, and it should not.  But it
                         does not allow spaces, and some people have two word names.</li>
                     <li>Last Name is not allowing punctuation.  What about names like O'Malley,
@@ -100,21 +134,31 @@
                     <li>Birthdate is allowing invalid dates, such as November 31.  It's also allowing future dates.</li>
                     <li>Email is not marked as required with a red asterisk, but it is required.
                         And we should be checking for a properly formatted email address.</li>
-                    <li>The Terms and Conditions link does not work in Internet Explorer. [TBD!!]</li>
+                    <li>The Terms and Conditions link only works in the Chrome browser, not in other browsers.</li>
                     <li>The Privacy Policy link goes to a page that does not exist (404).</li>
-                    <li>Usability: if you tab though the fields, the First and Last names are out of order.[TBD!!]</li>
-                    <li>You can click the Create Account button when no data is entered.</li>
+                    <li>If you tab though the fields, the First and Last names are out of order.[TBD!!]<span title="Testing Type: Usability"> <img src="Hover.png" /></span></li>
                     <li>When you register, the message has "undefined" where the first name should be.</li>
                 </ul>
             </div>
         </div>
+
     </section>
     <div style="clear: both;"></div>
-    <p class="todo">To Do:   Error messages should not wrap under the field, and Email message has bad positioning.  Add Bad tab order</p>
-    <p class="todo">When it passes validation, change message box to a nicer dialog.
+    <div class="NextLink"><br/><br/>
+            <a style="float:left;" href="Qa1.html">Back to Basic Concepts</a> &nbsp;
+            <a style="float:right;" href="QaQuiz.html">Next: Quiz</a>
+    </div>
+
+    <div id="Terms">
+            <h3>Terms and Conditions</h3>
+            <p>You, as the user, promise to love this website.</p>
+    </div>
+    <p class="todo" style="clear: both">To Do:   Error messages should not wrap under the field, and Email message has bad positioning.  Add Bad tab order</p>
+    <p class="todo">Decide on the "hover" for bug list, to show the type of testing.  If we use an icon, get a better one!
     </p>
-    <p class="todo">Add link to Terms and Conditions, and have it throw an error in IE only.
+    <p class="todo">
     </p>
+    <div id="SummaryMe"></div>
 
 </body>
 </html>
