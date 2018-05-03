@@ -20,8 +20,22 @@
                     duration: 1000
                 }
             });
-
+            
             $("#ThatMe").on("click", function () {
+                //first, set values in the SummaryText field on the dialog
+                var s = "<p style='background-color:" + $("#FavColor").val() + ";'>I am ";
+                if ($("#NickName").val() != "") s = s + $("#NickName").val() + " ";
+                if ($("#LuckyNumber").val() != "") s = s  + "Lucky with the number " + $("#LuckyNumber").val() + "<br/><br/>";
+                if ($("#input[name=Snack]:checked").length > 0) s = s + $('input[name=Snack]:checked').val() + " make me happy. <br/><br/>";
+                if ($("#Quote").val() != "") s= s + "Here's what I think is cool: " + $("#Quote").val();
+                s = s + "</p>";
+
+                $("#SummaryMe").html(s);
+                //then open the dialog
+                    $("#SummaryMe").dialog("open");
+                });
+
+            $("#SubmitButton").on("click", function () {
                 //first, set values in the SummaryText field on the dialog
                 var s = "I am ";
                 s = s + $("#NickName").val() + ". ";
@@ -34,6 +48,10 @@
             });
 
             $("#DevLink").addClass("activeTab");
+            
+            $('#clickJazz').on('click', function() {
+                $('#gladbox').css("display", "block");
+            });
         });
 
 
@@ -41,48 +59,70 @@
     </script>
     </head>
 <body>
-   <header class="header-container">
-        <div><a href="https://ChickTech.org"><img src="ChickTechLogo.PNG" width="75%" alt="ChickTech logo" /></a></div>
-        <div><img src="SymetraLogo.PNG" width="75%"  alt="Symetra logo" /></div>
-    </header>
+   
+   <object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
 <div class="flex-container">
-    <nav>
-        <ul>
-            <li><a href="Index.html" target="_parent">Welcome</a></li>
-            <li id="SaLink"><a href="Sa0.html" target="_parent">SA Workshop</a></li>
-            <li id="DevLink" class="activeTab"><a href="Dev0.html" target="_parent">Dev Workshop</a></li>
-            <li id ="QaLink"><a href="Qa0.html" target="_parent">QA Workshop</a></li>
-            <li id="ResLink"><a href="Resources.html" target="_parent">Resources</a></li>
-        </ul>
-    </nav>
+    
     <section>
         <h1>Developer Workshop</h1>
-        <article>
-               
-            <div class="centerBox" id="mainbox" style="width: 400px;">
-                <h3>Cool Stuff About Me</h3>
-            <div class="labeler">My Nickname</div>
-                <div><input type="text" id="NickName" autofocus /></div>
-            <div class="labeler">My Lucky Number </div>
-                <div><input type="number" id="LuckyNumber" min="0" max="100" /></div>
-            <div class="labeler">My Favorite Color</div>
-            <div><input type="text"  id="FavColor" /></div>
-                
-                <div class="labeler">A quote or saying, or a list of things I like</div>
-                <div><textarea id="Quote" rows="7" cols="50"></textarea></div>
-                <div class="labeler">My Favorite Snack</div>
-                <div style="margin-top: 10px;">
-                    <input type="radio" name="Snack" value="Chips" />Chips
-                    <input type="radio" name="Snack" value="Chocolate" />Chocolate
-                    <input type="radio" name="Snack" value="Pie" />Cake & Pie
-                    <input type="radio" name="Snack" value="Vegetables" />Vegetables
+            <div style="float: left; width: 540px;" >
+                <p class="instruction">This is a pretty simple form that gives a message when you click Submit.
+                Try it.  How we can make it more interesting, with the same information?</p>
+                <div  id="sadbox" class="leftPageBox" >
+                    <h3>Cool Stuff About Me</h3>
+                    <div class="labeler">My Nickname</div>
+                        <div><input type="text" id="bNickName" autofocus /></div>
+                    <div class="labeler">My Lucky Number </div>
+                        <div><input type="text" id="bLuckyNumber" min="0" max="100" /></div>
+                    <div class="labeler">My Favorite Color</div>
+                    <div><input type="text"  id="bFavColor" /></div>
+                    
+                    <div class="labeler">A quote or saying, or a list of things I like</div>
+                    <div><textarea id="bQuote" rows="7" cols="50"></textarea></div>
+                    <div class="labeler">My Favorite Snack</div>
+                    <div style="margin-top: 10px;">
+                        <input type="radio" name="Snack" value="Chips" />Chips
+                        <input type="radio" name="Snack" value="Chocolate" />Chocolate
+                        <input type="radio" name="Snack" value="Pie" />Cake & Pie
+                        <input type="radio" name="Snack" value="Vegetables" />Vegetables
+                    </div>
+                    <br/><br/>
+                    <button id="SubmitButton">Submit</button>
                 </div>
-                <br/><br/>
-                <button id="ThatMe">That's Me</button>
+            </div>
+            
+            <div   style="float: left;">
+                <p class='fakeLink' id="clickJazz">Click to see a jazzier version</p>
+                <div id="gladbox" class="leftPageBox" style=' display: none;'>
+                    <h3>Cool Stuff About Me</h3>
+                <div class="labeler">My Nickname</div>
+                    <div><input type="text" id="NickName" autofocus /></div>
+                <div class="labeler">My Lucky Number </div>
+                    <div><input type="number" id="LuckyNumber" min="0" max="100" /></div>
+                <div class="labeler">My Favorite Color</div>
+                <div><input type="color" value="#aaaaaa"  id="FavColor" /></div>
+                    
+                    <div class="labeler">A quote or saying, or a list of things I like</div>
+                    <div><textarea id="Quote" rows="7" cols="50"></textarea></div>
+                    <div class="labeler">My Favorite Snack</div>
+                    <div style="margin-top: 10px;">
+                        <input type="radio" name="Snack" value="Chips" />Chips
+                        <input type="radio" name="Snack" value="Chocolate" />Chocolate
+                        <input type="radio" name="Snack" value="Pie" />Cake & Pie
+                        <input type="radio" name="Snack" value="Vegetables" />Vegetables
+                    </div>
+                    <br/><br/>
+                    <button id="ThatMe">That's Me</button>
+                </div>
+            </div>
+            
+            <div style="clear:both;" class="todo">
+                <p>Fix the box widths.  Put a slider on the jazzier version.  Fix color on dialog, and use
+                opposite color text in dialog.</p>
+            </div>
 
-</div>
-        </article>
     </section>
+    <div id="SummaryMe"></div>
 
 </div>
 

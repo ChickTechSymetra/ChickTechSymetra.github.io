@@ -1,4 +1,7 @@
-﻿.flex-container {
+﻿* {
+    font-family: Helvetica, Verdana, Tahoma;
+}
+.flex-container {
     display: -webkit-flex;
     display: flex;  
     -webkit-flex-flow: row wrap;
@@ -30,7 +33,6 @@ h4 {
     border-radius: 10px;
     text-align: left;
 
-    font-family: Helvetica, Verdana, Tahoma;
 }
     .resourceBox li {
         list-style-type: circle;
@@ -56,7 +58,6 @@ footer {
 }
 
 section {
-    font-family: Verdana, Tahoma;
     margin: 20px 40px 40px 10px;
     text-align: center;
 }
@@ -75,7 +76,6 @@ nav {
         flex-flow: row wrap;
         text-align: center;
         justify-content: space-between;
-        font-family: Helvetica, Verdana, Tahoma;
         color: white;
     }
 
@@ -102,8 +102,8 @@ input {
     input:focus {
         background-color: lightgoldenrodyellow;
     }
-textarea:focus {
-    background-color: lightgoldenrodyellow;
+    textarea:focus {
+        background-color: lightgoldenrodyellow;
 }
 
 .labeler {
@@ -177,7 +177,6 @@ footer {
 #SummaryText {
     background-color: lightgoldenrodyellow;
     border-style: none;
-    font-family: Helvetica, Verdana, Tahoma;
     font-size: large;
 }
 .ui-dialog .ui-dialog-titlebar-close {
@@ -193,7 +192,6 @@ footer {
     font-style: italic;
     text-align: left;
     margin: 20px;
-    font-family: Helvetica;
 }
 .instruction {
     color: #0066cc;
@@ -227,12 +225,10 @@ a {
     border-color: #cccccc;
     border-width: 6px;
     background-color: #f2f2f2;
-    font-family: Helvetica;
     font-size: small;
     padding: 20px;
 }
 .NextLink a{
-        font-family: Helvetica;
         margin: 10px 25px 20px;
 }
 .Quiz {
