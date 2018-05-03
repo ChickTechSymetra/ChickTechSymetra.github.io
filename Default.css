@@ -168,14 +168,14 @@ footer {
     font-size: 85%;
 }
 #SummaryMe {
-    background-color:lightgoldenrodyellow;
-    padding: 20px;
+    padding: 15px;
+    margin: 0;
     border-style: double;
     border-color: gray;
     border-radius: 20px;
+    background-color: #f2f2f2;
 }
 #SummaryText {
-    background-color: lightgoldenrodyellow;
     border-style: none;
     font-size: large;
 }
