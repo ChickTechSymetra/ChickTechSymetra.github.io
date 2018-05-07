@@ -231,11 +231,26 @@ a {
 .NextLink a{
         margin: 10px 25px 20px;
 }
+.PrevLink a{
+    margin: 10px 25px 20px;
+    float: right;
+}
 .Quiz {
     text-align: left;
     
 }
 .Quiz li {
     margin: 20px 20px 20px;
+}
+.Step {
+    border-radius: 50%;
+    background-color: royalblue;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    width: 35px;
+    float: left;
+    margin: 0 15px 10px 0;
+
 }
 
