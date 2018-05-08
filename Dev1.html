@@ -23,7 +23,6 @@
             });
 
             $("#ThatMe").on("click", function () {
-                //first, set values in the SummaryText field on the dialog
                 var s = "<p style='background-color:" + $("#FavColor").val() + ";'>";
                 s = s + "I am " + $("#NickName").val() + ". ";
                 s = s  + "I'm lucky with the number " + $("#LuckyNumber").slider("value") + ". ";
@@ -63,6 +62,12 @@
                     handle.text( ui.value);
                 }
             });
+                    
+            $('#codeAccordion').accordion({
+                heightStyle: "content",
+                collapsible: true,
+                active: false
+            });
 
             
         });
@@ -83,11 +88,13 @@
                 <div class="labeler">My Nickname</div>
                     <div><input type="text" id="NickName" autofocus /></div>
                 <div class="labeler">My Lucky Number </div>
-                    <div id='LuckyNumber' style='margin: 10px;'>
-                        <div id="SliderHandle" class='ui-slider-handle'></div>
-                    </div>
+                <div id='LuckyNumber' style='margin: 10px;'>
+                    <div id="SliderHandle" class='ui-slider-handle'></div>
+                </div>
                 <div class="labeler">My Favorite Color</div>
-                <div><input type="color" value="#aaaaaa"  id="FavColor" /></div>
+                <div>
+                    <input type="color" id="FavColor" />
+                </div>
                     
                     <div class="labeler">A quote or saying, or a list of things I like</div>
                     <div><textarea id="Quote" rows="7" cols="50"></textarea></div>
@@ -104,18 +111,25 @@
                 </div>
             </div>
             <div style="float: left; width: 540px; text-align: left;" >
-                <p class='instruction'>Click the links below to see how to make these changes</p><br/><br/>
-                <p class='fakeLink'>Add a color picker</p><br/><br/>
-                <p class='fakeLink'>Add a slider</p><br/><br/>
-                <p class='fakeLink'>Create a cool dialog</p><br/><br/>
-                
+                <p class='instruction'>Click the sections below to see how to make these changes</p><br/><br/>
+                <div id='codeAccordion'>
+                    <h3>Add a color picker</h3>
+                    <p>This one is easy. On line __, you have an input field for Favorite Color.
+                    Change the input type from "text" to "color". <br/><br/>
+                    <img src='images/CodeColor.png'></p>
+                    <h3>Add a slider</h3>
+                    <p>Code here</p>
+                    <h3>Create a cool dialog</h3>
+                    <p>MORE Code here</p>
+                </div>
+     
             </div>
 
     </section>
 
 </div>
-<div style="clear: both;"></div>
-                <p class="todo">Fix the box widths.  Put a slider .  Fix color on dialog, and use
+<div style='clear: both;'></div>
+                <p class='todo">Fix the box widths.  use
                 opposite color text in dialog.</p>
 
 <div id="SummaryMe" title="This is Me">
