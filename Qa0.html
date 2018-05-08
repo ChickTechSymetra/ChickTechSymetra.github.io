@@ -85,6 +85,37 @@
             $( "#Terms" ).dialog({
                 autoOpen: false                
             });
+            
+            $('#T1').click(function(){
+                $(this).text(' Security Testing').removeClass('bugType').addClass('bugTypeText');
+            });
+            $('#T2').click(function(){
+                $(this).text(' Security Testing').removeClass('bugType').addClass('bugTypeText');
+            });
+            $('#T3').click(function(){
+                $(this).text(' System/Functional Testing').removeClass('bugType').addClass('bugTypeText');
+            });
+            $('#T4').click(function(){
+                $(this).text(' System/Functional Testing').removeClass('bugType').addClass('bugTypeText');
+            });
+            $('#T5').click(function(){
+                $(this).text(' System/Functional Testing').removeClass('bugType').addClass('bugTypeText');
+            });
+            $('#T6').click(function(){
+                $(this).text(' System/Functional Testing').removeClass('bugType').addClass('bugTypeText');
+            });
+            $('#T7').click(function(){
+                $(this).text(' Compatibility Testing').removeClass('bugType').addClass('bugTypeText');
+            });
+            $('#T8').click(function(){
+                $(this).text(' Usability Testing').removeClass('bugType').addClass('bugTypeText');
+            });
+            $('#T9').click(function(){
+                $(this).text(' Usability Testing').removeClass('bugType').addClass('bugTypeText');
+            });
+            $('#T10').click(function(){
+                $(this).text(' Usability Testing').removeClass('bugType').addClass('bugTypeText');
+            });
            
 
         });
@@ -102,43 +133,45 @@
                 <h3>Create an account</h3>
                 <div class="error" style="width:85%; text-align: right; ">* required</div>
                 <div class="labeler">User Name<span class="req">*</span></div>
-                <div><input type="text" id="UserName"/><span id="UserNameMsg" class="error"></span></div>
+                <div><input type="text" id="UserName" focus tabindex='0' /><span id="UserNameMsg" class="error"></span></div>
                 <div class="labeler">Password<span class="req">*</span></div>
-                <div><input type="text" id="Password"/><span id="PasswordMsg" class="error"></span></div>
+                <div><input type="text" id="Password" tabindex='1'/><span id="PasswordMsg" class="error"></span></div>
                 <br/><br>
                 <div class="labeler">First Name<span class="req">*</span></div>
-                <div><input type="text" id="FirstName"/><span id="FirstNameMsg" class="error"></span></div>
+                <div><input type="text" id="FirstName" tabindex='3'/><span id="FirstNameMsg" class="error"></span></div>
                 <div class="labeler">Last Name<span class="req">*</span></div>
-                <div><input type="text" id="LastName"/></div><div id="LastNameMsg" class="error"></div>
+                <div><input type="text" id="LastName" tabindex='2'/></div><div id="LastNameMsg" class="error"></div>
                 <div class="labeler">Birthdate</div>
-                <div><input type="date" id="Birthdate" /></div><div id="BirthdateMsg" class="error"></div>
+                <div><input type="date" id="Birthdate" tabindex='4'/></div><div id="BirthdateMsg" class="error"></div>
                 <div class="labeler">Email Address</div>
-                <div><input type="text" id="Email"/></div><div id="EmailMsg" class="error"></div>
+                <div><input type="text" id="Email" tabindex='5'/></div><div id="EmailMsg" class="error"></div>
                 <br/>
-                <p style="font-size: small;"><span class="fakeLink" id="TermsLink">Terms and Conditions</span> &nbsp;  &nbsp;  &nbsp;  &nbsp; <span><a href="Policy1.html">Privacy Policy</a></span></p>
+                <p style="font-size: small;"><span class="fakeLink" id="TermsLink" tabindex='6'>Terms and Conditions</span> &nbsp;  &nbsp;  &nbsp;  &nbsp; <span><a href="Policy1.html" tabindex='7'>Privacy Policy</a></span></p>
                 
-                <input type="button" id="CreateButton" value="Create Account"/>
+                <input type="button" id="CreateButton" value="Create Account" tabindex='8'/>
             </div>
         </div>
         <div style="float: left; margin: 50px 20px 10px; text-align: left;  width: 500px;">
-            <p id="BugListToggle" class="fakeLink">Show me the bug list</p>
+            <p id="BugListToggle" class="fakeLink" tabindex='11'>Show me the bug list</p>
             <div id="BugList" style="display: none; " ><br/>
                 <p class="instruction">These are some of the bugs.  What others can you find?</p>
+                <p class="instruction">For bug, can you
+                 identify the type of testing that would catch this?</p>
                 <ul id="BugListUl">
-                    <li title="Testing Type: XYZ">User Name is allowing a space to be included.</li>
-                    <li>Password is in clear text--this should be masked!  Also, the password rules are weak.</li>
+                    <li>User Name is allowing a space to be included.
+                    <span id='T1' class='bugType'>Type?</span></li>
+                    <li>Password is in clear text--this should be masked!  Also, the password rules are weak.<span id='T2' class='bugType'>Type?</span></li>
                     <li>First Name is allowing numbers, and it should not.  But it
-                        does not allow spaces, and some people have two word names.</li>
+                        does not allow spaces, and some people have two word names.<span id='T3' class='bugType'>Type?</span></li>
                     <li>Last Name is not allowing punctuation.  What about names like O'Malley,
-                        Pinkett-Smith, or Jones, Jr.?</li>
-                    <li>Birthdate is allowing invalid dates, such as November 31.  It's also allowing future dates.</li>
+                        Pinkett-Smith, or Jones, Jr.?<span id='T4' class='bugType'>Type?</span></li>
+                    <li>Birthdate is allowing invalid dates, such as November 31.  It's also allowing future dates.<span id='T5' class='bugType'>Type?</span></li>
                     <li>Email is not marked as required with a red asterisk, but it is required.
-                        And we should be checking for a properly formatted email address.</li>
-                    <li>The Terms and Conditions link only works in the Chrome browser, not in other browsers.</li>
-                    <li>The Privacy Policy link goes to a page that does not exist (404).</li>
-                    <li>If you tab though the fields, the First and Last names are out of order.[TBD!!]<span title="Testing Type: Usability">
-                    <img src="images/Hover.png" /></span></li>
-                    <li>When you register, the message has "undefined" where the first name should be.</li>
+                        And we should be checking for a properly formatted email address.<span id='T6' class='bugType'>Type?</span></li>
+                    <li>The Terms and Conditions link only works in the Chrome browser, not in other browsers.<span id='T7' class='bugType'>Type?</span></li>
+                    <li>The Privacy Policy link goes to a page that does not exist (404).<span id='T8' class='bugType'>Type?</span></li>
+                    <li>If you tab though the fields, the First and Last names are out of order.[TBD!!]<span id='T9' class='bugType'>Type?</span> </li>
+                    <li>When you register, the message has "undefined" where the first name should be.<span id='T10' class='bugType'>Type?</span></li>
                 </ul>
             </div>
         </div>
@@ -146,8 +179,8 @@
     </section>
     <div style="clear: both;"></div>
     <div class="NextLink"><br/><br/>
-            <a style="float:left;" href="Qa1.html">Back to Basic Concepts</a> &nbsp;
-            <a style="float:right;" href="QaQuiz.html">Next: Quiz</a>
+            <a style="float:left;" href="Qa1.html" tabindex='9'>Back to Basic Concepts</a> &nbsp;
+            <a style="float:right;" href="QaQuiz.html" tabindex='10'>Next: Quiz</a>
     </div>
 
     <div id="Terms">

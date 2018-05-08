@@ -3,9 +3,10 @@
 <head>
     <title>Developer Workshop</title>
     <link rel="stylesheet" href="Default.css?v1.3" >
-    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <script>
   
         $(function () {
@@ -23,15 +24,9 @@
 
             $("#ThatMe").on("click", function () {
                 //first, set values in the SummaryText field on the dialog
-                //var s = "<p style='background-color:" + $("#FavColor").val() + ";'>I am ";
-                //if ($("#NickName").val() != "") s = s + $("#NickName").val() + " ";
-                //if ($("#LuckyNumber").val() != "") s = s  + "Lucky with the number " + $("#LuckyNumber").val() + "<br/><br/>";
-                //if ($("#input[name=Snack]:checked").length > 0) s = s + $('input[name=Snack]:checked').val() + " make me happy. <br/><br/>";
-                //if ($("#Quote").val() != "") s= s + "Here's what I think is cool: " + $("#Quote").val();
-                //s = s + "</p>";
                 var s = "<p style='background-color:" + $("#FavColor").val() + ";'>";
                 s = s + "I am " + $("#NickName").val() + ". ";
-                //s = s  + "I'm lucky with the number " + $("#LuckyNumber").val() + ". ";
+                s = s  + "I'm lucky with the number " + $("#LuckyNumber").slider("value") + ". ";
                 s = s + "Feed me " + $('input[name=Snack]:checked').val() + "! ";
                 s = s + "Here's what I think is cool: " + $("#Quote").val();
                 s = s + "</p>";
@@ -56,7 +51,19 @@
                 window.location.href = "Resources.html";
             });
             
-            $('#LuckyNumber').slider();
+            var handle = $('#SliderHandle');
+            $('#LuckyNumber').slider({
+                min: 1,
+                max: 25,
+                value: 1,
+                create: function() {
+                    handle.text($(this).slider("value"));
+                },
+                slide: function(event, ui) {
+                    handle.text( ui.value);
+                }
+            });
+
             
         });
 
@@ -76,7 +83,9 @@
                 <div class="labeler">My Nickname</div>
                     <div><input type="text" id="NickName" autofocus /></div>
                 <div class="labeler">My Lucky Number </div>
-                    <div id=LuckyNumber></div>
+                    <div id='LuckyNumber' style='margin: 10px;'>
+                        <div id="SliderHandle" class='ui-slider-handle'></div>
+                    </div>
                 <div class="labeler">My Favorite Color</div>
                 <div><input type="color" value="#aaaaaa"  id="FavColor" /></div>
                     
@@ -109,7 +118,7 @@
                 <p class="todo">Fix the box widths.  Put a slider .  Fix color on dialog, and use
                 opposite color text in dialog.</p>
 
-<div id="SummaryMe">
+<div id="SummaryMe" title="This is Me">
 </div>
 
 </body>

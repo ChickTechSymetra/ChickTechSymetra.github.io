@@ -251,6 +251,18 @@ a {
     width: 35px;
     float: left;
     margin: 0 15px 10px 0;
-
+}
+.bugType {
+    font-size: small;
+    font-weight: bold;
+    background-color: #c2d1f0;
+    padding: 4px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+.bugTypeText {
+    background-color: #fff;
+    color: #0066cc;
+    marging-left: 10px;
 }
 
