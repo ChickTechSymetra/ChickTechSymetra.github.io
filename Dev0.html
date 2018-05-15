@@ -9,19 +9,7 @@
     <script>
   
         $(function () {
-            $( "#SummaryMe" ).dialog({
-                autoOpen: false,
-                show: {
-                    effect: "blind",
-                    duration: 1000
-                },
-                hide: {
-                    effect: "explode",
-                    duration: 1000
-                }
-            });
-            
-
+ 
             $("#SubmitButton").on("click", function () {
                 //first, set values in the SummaryText field on the dialog
                 var s = "I am ";
@@ -36,12 +24,7 @@
 
             $("#DevLink").addClass("activeTab");
             
-            $('#clickJazz').on('click', function() {
-                $('#gladbox').css("display", "block");
-            });
         });
-
-
 
     </script>
     </head>
@@ -90,7 +73,6 @@
             </div>
 
     </section>
-    <div id="SummaryMe"></div>
 
 </div>
 

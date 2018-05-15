@@ -2,22 +2,39 @@
 <html>
 <head>
     <title>Developer Workshop</title>
-     <link rel="stylesheet" href="Default.css?v1.3" >
-     </head>
+    <link rel="stylesheet" href="Default.css?v1.3">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(function () {
+            $('#DevLink').addClass("activeTab");
+        });
+    </script>
+</head>
 <body>
 
     <object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
     <section>
         <h1>Developer Workshop</h1>
-        <div style='width: 400px; margin-left: 200px; text-align: left;'>
+        <h4>with Diane Zormeir and Ravi Pydi</h4>
+        <div style='width: 500px; margin: 20px auto; text-align: left;'>
+            <div class="resourceBox" style="margin: auto;padding: 20px;">
+                ~~ Icebreaker Time! ~~
+                <p>&diams; &nbsp;What's your name?</p>
+                <p>&diams; &nbsp;Talk about any development experience you have, if any.</p>
+                <p>&diams; &nbsp;What's your favorite website or app?</p>
+
+            </div><br /><br />
+
             <p>Our goals today:</p>
             <ul>
-                <li>Create web pages with HTML and CSS<br/><br/></li>
-                <li>Create a new site on the internet and publish my pages<br/><br/></li>
-                <li>Set up a Git account in the cloud where I can access my code after today<br/><br/></li>
+                <li>Create web pages with HTML and CSS<br /><br /></li>
+                <li>Create a new site on the internet and publish my pages<br /><br /></li>
+                <li>Set up a Git account in the cloud where I can access my code after today<br /><br /></li>
             </ul>
+
         </div>
-        <div><a href='DevSetUp.html'>Let's get started</a></div>
+
+        <div id="NextLink"><a href='DevSetUp.html'>Let's get started</a></div>
     </section>
 </body>
 </html>
