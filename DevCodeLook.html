@@ -11,12 +11,21 @@
   
         $(function () {
             
-            $('#codeAccordion').accordion({
-                heightStyle: "content",
-                collapsible: true,
-                active: false
+            $("#WhatIsStyleSheet").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "fold",
+                    duration: 1000
+                }
             });
-
+            $("#HelpStyleSheet").on("click",
+                function() {
+                    $("#WhatIsStyleSheet").dialog("open");
+                });
             
         });
 
@@ -38,14 +47,15 @@
         <img src="images/navhtml.png"/>
         <br/><br/>
         <h3>The Stylesheet: mystyle.css &nbsp; &nbsp; &nbsp; 
-            <img src="images/whatStylesheet.png" alt="what is a stylesheet?" style="cursor: pointer; vertical-align: middle;"/></h3>
+            <img id="HelpStyleSheet" src="images/whatStylesheet.png" alt="what is a stylesheet?" style="cursor: pointer; vertical-align: middle;"/></h3>
         <img src="images/mystylecss.png"/>
 
     </div>
 </section>
 <div class="PrevLink"><a href='DevSetUp2.html'>Previous: Customize our Page</a></div>&nbsp;&nbsp;
 <div class="NextLink"><a href='Dev0.html'>Next: Input on a Web Page</a></div>
-
+    
+<div id="WhatIsStyleSheet" class="WhatIsBox">Stylesheet information goes here</div>
 
 </body>
 </html>
