@@ -278,5 +278,10 @@ a {
 .TestType {
     font-weight: bold;
 }
+.WhatIsBox {
+    background-color: #ffffcc;
+    border-radius: 6px;
+    padding: 20px;
+}
 
 

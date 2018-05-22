@@ -4,9 +4,39 @@
     <title>Developer Workshop</title>
     <link rel="stylesheet" href="Default.css?v1.3">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function () {
             $('#DevLink').addClass("activeTab");
+            $("#WhatIsCss").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "fold",
+                    duration: 1000
+                }
+            });
+            $("#HelpCss").on("click", function() {
+                    $("#WhatIsCss").dialog("open");
+            });
+            $("#WhatisJavascript").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "clip",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "fold",
+                    duration: 1000
+                }
+            });
+            $("#HelpJavascript").on("click",
+                function() {
+                    $("#WhatisJavascript").dialog("open");
+            });
         });
     </script>
 </head>
@@ -24,17 +54,25 @@
                 <p>&diams; &nbsp;What's your favorite website or app?</p>
 
             </div><br /><br />
-
-            <p>Our goals today:</p>
-            <ul>
-                <li>Create web pages with HTML, CSS and JavaScript<br /><br /></li>
-                <li>Create a new site on the internet and publish my pages<br /><br /></li>
-                <li>Set up a Git account in the cloud where I can access my code after today<br /><br /></li>
-            </ul>
-
+            <div style="float: left;">
+                <p>Our goals today:</p>
+                <ul>
+                    <li>Create web pages with HTML, CSS and JavaScript<br /><br /></li>
+                    <li>Create a new site on the internet and publish my pages<br /><br /></li>
+                    <li>Set up a Git account in the cloud where I can access my code after today<br /><br /></li>
+                </ul>
+            </div>
+            <div style="float: left;">
+                <img id="HelpCss" src="images/whatCss.png" alt="what is CSS?" style="cursor: pointer;"/>
+            </div>
+            <div style="float: right;">
+                <img id="HelpJavascript" src="images/whatJavascript.png" alt="what is JavaScript?" style="cursor: pointer;"/>
+            </div>
         </div>
-
+        <div style="clear: both;"></div>
         <div id="NextLink"><a href='DevSetUp.html'>Let's get started</a></div>
+        <div id="WhatIsCss" class="WhatIsBox" >Definition of CSS goes here</div>
+        <div id="WhatisJavascript" class="WhatIsBox" >Definition of Javascript goes here</div>
     </section>
 </body>
 </html>
