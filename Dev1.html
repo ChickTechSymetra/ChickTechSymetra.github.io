@@ -68,7 +68,7 @@
 <body>
     <object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
     <section>
-        <h1>Developer Workshop</h1>
+        <h1>Jazzier Pages</h1>
         <div style="float: left; width: 540px;">
             <p class="instruction">Is this a little more interesting?  </p>
 
@@ -96,7 +96,7 @@
                 </div>
                 <br /><br />
                 <button id="ThatMe">That's Me</button>
-                
+
             </div>
             <div class="instruction" style="margin: 35px 70px 5px 25px;">
                 This box uses the jQuery library.  You can find out more
@@ -138,21 +138,21 @@
                     In this case, we've already put the code you need on lines 26-38.  You
                     just need to "uncomment" them by removing the comment tags /* and */.
                     This is what the script looks like:<br /><br />
-                    <span style="font-style: italic;">Inside the tag:</span><br/>
-                                                                            <span class='code'>
-                                                                                var handle = $('#SliderHandle');<br />
-                                                                                $('#LuckyNumber').slider({<br />
-                                                                                &nbsp; &nbsp; min: 1,<br />
-                                                                                &nbsp; &nbsp; max: 25,<br />
-                                                                                &nbsp; &nbsp; value: 1,<br />
-                                                                                &nbsp; &nbsp; create: function() {<br />
-                                                                                &nbsp; &nbsp; &nbsp; &nbsp;handle.text($(this).slider("value"));<br />
-                                                                                &nbsp; &nbsp;},<br />
-                                                                                &nbsp; &nbsp;slide: function(event, ui) {<br />
-                                                                                &nbsp; &nbsp; &nbsp; &nbsp; handle.text( ui.value);<br />
-                                                                                &nbsp; &nbsp; }<br />
-                                                                                });
-                                                                            </span>
+                    <span style="font-style: italic;">Inside the tag:</span><br />
+                    <span class='code'>
+                        var handle = $('#SliderHandle');<br />
+                        $('#LuckyNumber').slider({<br />
+                        &nbsp; &nbsp; min: 1,<br />
+                        &nbsp; &nbsp; max: 25,<br />
+                        &nbsp; &nbsp; value: 1,<br />
+                        &nbsp; &nbsp; create: function() {<br />
+                        &nbsp; &nbsp; &nbsp; &nbsp;handle.text($(this).slider("value"));<br />
+                        &nbsp; &nbsp;},<br />
+                        &nbsp; &nbsp;slide: function(event, ui) {<br />
+                        &nbsp; &nbsp; &nbsp; &nbsp; handle.text( ui.value);<br />
+                        &nbsp; &nbsp; }<br />
+                        });
+                    </span>
                 </p>
 
                 <h3>Create a cool dialog</h3>
@@ -172,9 +172,10 @@
         </div>
 
 
-        <div  style='clear: both;'>
+        <div style='clear: both;'>
         </div>
-        <div class="PrevLink"><br/><br/><a href='Dev0.html'>Previous: Input on a Webpage</a></div>&nbsp;&nbsp;
+        <div class="PrevLink"><br /><br /><a href='Dev0.html'>Previous: Input on a Webpage</a></div>&nbsp;&nbsp;
+        <div class="NextLink"><br /><br /><a href='DevClose.html'>Next: Wrap Up</a></div>
 
         <div id="SummaryMe" title="This is Me">
         </div>
