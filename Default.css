@@ -110,7 +110,8 @@ input {
 }
 
 .labeler {
-    margin-top: 18px;
+    padding-top: 18px;
+    clear: both;
 }
 .labelerReq {
     margin-top: 18px;
@@ -164,6 +165,10 @@ footer {
     color: Red;
     margin-left: 10px;
     font-size: 85%;
+    max-width: 300px; 
+    float: left; 
+    display: block; 
+    word-wrap: normal;
 }
 #SummaryMe {
     padding: 15px;
