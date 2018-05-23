@@ -23,6 +23,21 @@
                 function() {
                     $("#WhatIsGitHub").dialog("open");
                 });
+            $("#WhatIsRepository").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "fold",
+                    duration: 1000
+                }
+            });
+            $("#HelpRepository").on("click",
+                function() {
+                    $("#WhatIsRepository").dialog("open");
+                });
         });
     </script>
     </head >
@@ -54,7 +69,9 @@
     </p><br/>
     <p><span class='Step'>6</span>You'll be asked to create a Repository, where your web pages will be stored.  This step is very important!  You can have lots
     of repositories, but you can only have one that will publish to your own website.  That repository name needs to be your <strong>Username.github.io</strong></p>
-    <img style='margin-left: 50px'  src='images/Repo.png' alt='Creating a repository' />
+                <img style='margin-left: 50px'  src='images/Repo.png' alt='Creating a repository' /> 
+                <img src="images/whatRepository.png" alt="What is a repository?"
+                     id="HelpRepository" style="cursor: pointer; margin-left: 25px; vertical-align: top;"/>
     
     <p><span class='Step'>7</span>Done?  OK, now we're going to switch to your machine, where we already have
       your commands set up.  On your laptop, go to C:\WorkshopFiles.  There is a file there called SetUpGit that
@@ -74,7 +91,7 @@
     <br/><br/>
 
     <div id="WhatIsGitHub" class="WhatIsBox" >GitHub information goes here</div>
-    
+    <div id="WhatIsRepository" class="WhatIsBox">Explain a repository here</div>
     </div>
     
 
