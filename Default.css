@@ -169,6 +169,7 @@ footer {
 }
 .prettytbl td {
     padding: 8px 5px 8px;
+    font-size: small;
 }
 .prettyHeader {
     background: linear-gradient(to right, #b3ffec, #007dd7);
