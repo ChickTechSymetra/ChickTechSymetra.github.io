@@ -4,9 +4,52 @@
     <title>Developer Workshop</title>
     <link rel="stylesheet" href="Default.css?v1.3">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function () {
             $('#DevLink').addClass("activeTab");
+            $("#WhatChange").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "fold",
+                    duration: 1000
+                }
+            });
+            $("#HelpChange").on("click", function() {
+                $("#WhatChange").dialog("open");
+            });
+            $("#WhatIsHtmlTags").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "fold",
+                    duration: 1000
+                }
+            });
+            $("#HelpHtmlTags").on("click", function() {
+                $("#WhatIsHtmlTags").dialog("open");
+            });
+            $("#WhatIsHtml").dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "fold",
+                    duration: 1000
+                }
+            });
+            $("#HelpHtml").on("click", function() {
+                $("#WhatIsHtml").dialog("open");
+            });
         });
     </script>
 </head>
@@ -25,6 +68,10 @@
         </div>
 
         <div class="PrevLink"><a href='Dev1.html'>Prev: Jazzier Pages</a></div>
+        <div id="WhatChange" class="WhatIsBox" >Explanation here</div>
+        <div id="WhatIsHtmlTags" class="WhatIsBox" >There are plenty of free resources on the web to learn
+            HTML.  add links here</div>
+        <div id="WhatIsHtml" class="WhatIsBox" >HyperText Markup Language</div>
     </section>
 </body>
 </html>
