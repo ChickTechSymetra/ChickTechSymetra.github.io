@@ -312,5 +312,10 @@ a {
     border-radius: 6px;
     padding: 20px;
 }
+.Definition {
+    padding: 25px;
+    text-align: left;
+    background-color: #ffffcc;
+}
 
 

@@ -8,22 +8,30 @@
       <script>
         //these are individual field edits, which will trigger when someone exits the field.
         $(function () {
-            
-            $( "#defReq" ).dialog({
-                autoOpen: false,
-                show: {
-                    effect: "fade",
-                    duration: 1000
-                },
-                hide: {
-                    effect: "fade",
-                    duration: 1000
-                }
+            $("#mapReq").on("click", function () {
+                $('#definition').html(
+                    "<p class='Definition'><strong>Requirements Analysis:</strong> The requirements gathering and analysis phase is the first phase. The most important phase of the SDLC is the requirement gathering and analysis phase because this is when the project team begins to understand what the customer wants from the project. </p>");
             });
-            $("#mapReq").on("click",
-                function () {
-                    $("#defReq").dialog("open");
-                });
+            $("#mapSys").on("click", function () {
+                $('#definition').html(
+                    "<p class='Definition'><strong>System Design: </strong>The purpose of the design phase is to plan a solution of the problem specified by the requirement document. This phase is the first step in moving from problem domain to the solution domain. The design of a system is perhaps the most critical factor affecting the quality of the software, and has a major impact on the later phases, particularly testing and maintenance. The output of this phase is the design document. This document is similar to a blue print or plan for the solution, and is used later during implementation, testing and maintenance</p>");
+            });
+            $("#mapImp").on("click", function () {
+                $('#definition').html(
+                    "<p class='Definition'><strong>Implementation:</strong> The final phase in the SDLC is the implementation phase, during which the system is actual built (or purchased, in the case of a package software design). This is the phase that usually gets the most attention, because for most systems it is longest and most expensive single part of the development phase.</p>");
+            });
+            $("#mapTest").on("click", function () {
+                $('#definition').html(
+                    "<p class='Definition'><strong>Testing:</strong> The testing phase of the software development lifecycle (SDLC) is where you focus on investigation and discovery. During the testing phase, developers find out whether their code and programming are work according to customer requirements. </p>");
+            });
+            $("#mapDeploy").on("click", function () {
+                $('#definition').html(
+                    "<p class='Definition'><strong>Deployment:</strong> This phase is the final phase of SDLC where the final software is implemented in the production environment.</p>");
+            });
+            $("#mapMaint").on("click", function () {
+                $('#definition').html(
+                    "<p class='Definition'><strong>Maintenance:</strong> The maintenance phase of the SDLC occurs after the product is in full operation. Maintenance of software can include software upgrades, repairs, and fixes of the software if it breaks. Software applications often need to be upgraded or integrated with new systems the customer deploys.</p>");
+            });
  
         });
       </script>
@@ -36,28 +44,25 @@
         <h1>Software Development Life Cycle (SDLC)</h1>
         <p>Below are the phases of the Software Development Life Cycle.  Click on each box
             to see a definition of the phase. </p>
-        <img src="images/sdlc.png" usemap="sdlcmap" width="800"/>
-        <map name="sdlcmap">
-            <area id="mapReq" shape="rect" coords="20, 15, 200, 70" " />
-            <area shape="rect" coords="140, 90, 310, 130" onclick="alert('2');" />
-            <area shape="rect" coords="240, 165, 430, 200" onclick="alert('3');" />
-            
-            <area shape="rect" coords="350, 230, 530, 280" onclick="alert('4');" />
-            <area shape="rect" coords="460, 300, 640, 350" onclick="alert('5');" />
-            <area shape="rect" coords="570, 365, 750, 415" onclick="alert('6');" />
-        </map>
+        <div>
+            <img src="images/sdlc.png" usemap="sdlcmap" width="800" style="float: left; padding: 20px 0 0 40px;"/>
+            <map name="sdlcmap">
+                <area id="mapReq" shape="rect" coords="60, 45, 240, 100"/>
+                <area id="mapSys" shape="rect" coords="180, 100, 350, 150" />
+                <area id="mapImp" shape="rect" coords="280, 185, 470, 220"/>
+
+                <area id="mapTest" shape="rect" coords="390, 250, 570, 300" />
+                <area id="mapDeploy" shape="rect" coords="500, 320, 680, 370" />
+                <area id="mapMaint" shape="rect" coords="610, 385, 790, 435" />
+            </map>
+            <span id="definition" style="float: left; width: 300px; margin: 20px;">&nbsp;</span>
+        </div>
     </section>
     <div style="clear: both;"></div>
     <div class="PrevLink"><br/><br/>
-            <a href="QaWelcome.html" tabindex='9'>Back to Intro</a> </div>
-    <div class="NextLink"><a href="QaTestTypes.html" tabindex='10'>Next: Testing Definitions</a>
-    </div>
+            <a href="QaTestTypes.html" tabindex='9'>Back to Test Definitions</a> </div>
 
-    <div id="defReq" class="WhatIsBox">
-        Requirements Analysis: the requirements gathering and analysis phase is the first phase. 
-        The most important phase of the SDLC is the requirement gathering and analysis phase because 
-        this is when the project team begins to understand what the customer wants from the project.
-    </div>
+    
 
 </body>
 </html>
