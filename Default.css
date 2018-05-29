@@ -6,7 +6,7 @@ html, body {
     padding: 0;
 }
 h1 {
-    color: #007dd7; font-size: 48px; font-weight: bold; margin-bottom: 10px;
+    color: #007dd7; font-size: 42px; font-weight: bold; margin-bottom: 10px;
 }
 .flex-container {
     display: -webkit-flex;
@@ -107,7 +107,7 @@ nav {
         nav ul a {
             text-decoration: none;
             color: black;
-            font-size: 18px;
+            font-size: 14px;
         }
 .no {
     list-style-type: none;
