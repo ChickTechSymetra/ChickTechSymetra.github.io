@@ -25,6 +25,7 @@ h1 {
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
+    max-width: 1200px;
 
 }
 h4 {
@@ -309,8 +310,12 @@ a {
 }
 .WhatIsBox {
     background-color: #ffffcc;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 20px;
+    border-top: 1px solid #ffff66;
+    border-left: 1px solid #ffff66;
+    border-bottom: 5px solid #bfbfbf;
+    border-right: 5px solid #bfbfbf;
 }
 .Definition {
     padding: 25px;
