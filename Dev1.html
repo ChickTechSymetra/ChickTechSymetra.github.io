@@ -2,15 +2,15 @@
 <html>
 <head>
     <title>Developer Workshop</title>
-    <link rel="stylesheet" href="Default.css?v1.3" >
-
+    <link rel="stylesheet" href="Default.css?v1.3">
+    <link rel="icon" href="images/Chicktech-Symetra-Icon.png">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <script>
-  
+
         $(function () {
-            $( "#SummaryMe" ).dialog({
+            $("#SummaryMe").dialog({
                 autoOpen: false,
                 show: {
                     effect: "bounce",
@@ -27,38 +27,38 @@
                 var contrast = invertColor(color, true);
                 var s = "<p style='background-color:" + color + "; color:" + contrast + ";'>";
                 s = s + "I am " + $("#NickName").val() + ". ";
-                s = s  + "I'm lucky with the number " + $("#LuckyNumber").slider("value") + ". ";
+                s = s + "I'm lucky with the number " + $("#LuckyNumber").slider("value") + ". ";
                 s = s + "Feed me " + $('input[name=Snack]:checked').val() + "! ";
                 s = s + "Here's what I think is cool: " + $("#Quote").val();
                 s = s + "</p>";
-                
+
                 $("#SummaryMe").html(s);
                 $("#SummaryMe").css('background-color', color);
-                //then open the dialog                
+                //then open the dialog
                 $("#SummaryMe").dialog("open");
             });
 
-           
+
             var handle = $('#SliderHandle');
             $('#LuckyNumber').slider({
                 min: 1,
                 max: 25,
                 value: 1,
-                create: function() {
+                create: function () {
                     handle.text($(this).slider("value"));
                 },
-                slide: function(event, ui) {
-                    handle.text( ui.value);
+                slide: function (event, ui) {
+                    handle.text(ui.value);
                 }
             });
-                    
+
             $('#codeAccordion').accordion({
                 heightStyle: "content",
                 collapsible: true,
                 active: false
             });
 
-            
+
         });
 
         function invertColor(hex, bw) {
@@ -95,7 +95,7 @@
         }
 
     </script>
-    </head>
+</head>
 <body>
     <object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
     <section>

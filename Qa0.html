@@ -1,63 +1,64 @@
 ﻿<!DOCTYPE html>
 <html>
-  <head>
-      <title>QA Workshop</title>
-      <link rel="stylesheet" href="Default.css?v1.0" />
-      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-      <script>
+<head>
+    <title>QA Workshop</title>
+    <link rel="stylesheet" href="Default.css?v1.0" />
+    <link rel="icon" href="images/Chicktech-Symetra-Icon.png">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
         //these are individual field edits, which will trigger when someone exits the field.
         $(function () {
-            $( "#UserName" ).on("focusout", function() {
+            $("#UserName").on("focusout", function () {
                 var val = this.value;
                 var pattern = new RegExp('^[A-Za-z0-9._\\-\\s\\@]{3,25}$');
-                if (!pattern.test(val))  $('#UserNameMsg').text("Username can be 3 to 25 alphanumeric characters, including characters @.-_");
+                if (!pattern.test(val)) $('#UserNameMsg').text("Username can be 3 to 25 alphanumeric characters, including characters @.-_");
                 else $('#UserNameMsg').text("");
             });
-            $( "#Password" ).on("focusout", function() {
+            $("#Password").on("focusout", function () {
                 var val = this.value;
                 var pattern = new RegExp('^[A-Za-z0-9]{7,25}$');
-                if (!pattern.test(val))  $('#PasswordMsg').text("Password must be 7 to 25 alphanumeric characters");
+                if (!pattern.test(val)) $('#PasswordMsg').text("Password must be 7 to 25 alphanumeric characters");
                 else $('#PasswordMsg').text("");
             });
-            $( "#FirstName" ).on("focusout", function() {
+            $("#FirstName").on("focusout", function () {
                 var val = this.value;
                 var pattern = new RegExp('^[A-Za-z0-9\\-]{1,25}$');
-                if (!pattern.test(val))  $('#FirstNameMsg').text("First Name can be up to 25 alphabetic characters");
+                if (!pattern.test(val)) $('#FirstNameMsg').text("First Name can be up to 25 alphabetic characters");
                 else $('#FirstNameMsg').text("");
             });
-            $( "#LastName" ).on("focusout", function() {
+            $("#LastName").on("focusout", function () {
                 var val = this.value;
                 var pattern = new RegExp('^[A-Za-z/0-9\\s]{2,35}$');
-                if (!pattern.test(val))  $('#LastNameMsg').text("Last Name must be 2 to 35 characters");
+                if (!pattern.test(val)) $('#LastNameMsg').text("Last Name must be 2 to 35 characters");
                 else $('#LastNameMsg').text("");
             });
-            $( "#Email" ).on("focusout", function() {
+            $("#Email").on("focusout", function () {
                 var val = this.value;
                 if (val == '')
-                     $('#EmailMsg').text("Email address is required");
-                     else $('#EmailMsg').text("");
+                    $('#EmailMsg').text("Email address is required");
+                else $('#EmailMsg').text("");
             });
-            
+
             //this will show/hide the bug list
-            $("#BugListToggle").click(function(){
+            $("#BugListToggle").click(function () {
                 $("#BugList").toggle();
                 if ($("#BugListToggle").text() == "Hide the bug list") $("#BugListToggle").text("Show the bug list");
                 else $("#BugListToggle").text("Hide the bug list");
             });
-            
+
             //this will check all fields when Create Account is clicked, and give a message if successful
-            $("#CreateButton").click(function(){
+            $("#CreateButton").click(function () {
                 //first, check required fields
                 if ($("#UserName").val() == "") $("#UserNameMsg").text("User Name is required");
                 if ($("#Password").val() == "") $("#PasswordMsg").text("Password is required");
                 if ($("#FirstName").val() == "") $("#FirstNameMsg").text("First Name is required");
-                if ($("#LastName").val() == "") $("#LastNameMsg").text("Last Name is required.") ;
+                if ($("#LastName").val() == "") $("#LastNameMsg").text("Last Name is required.");
                 if ($("#Email").val() == "") $("#EmailMsg").text("Email address is required");
-              
+
                 //next, register user if no errors found
                 if (($("#UserNameMsg").text() == "") & ($("#PasswordMsg").text() == "") & ($("#FirstNameMsg").text() == "")
-                    & ($("#LastNameMsg").text() == "") & ($("#BirthdateMsg").text() == "") & ($("#EmailMsg").text() == "")){
+                    & ($("#LastNameMsg").text() == "") & ($("#BirthdateMsg").text() == "") & ($("#EmailMsg").text() == "")) {
                     var s = 'wtf';
                     $("#SummaryMe").html(s);
                     $("#SummaryMe").html('<p>Thank you for registering, ' + $('#FirstNamex').val() + ' ' + $('#LastName').val() + '</p>');
@@ -66,12 +67,12 @@
                 //else, give them a message if errors were found
                 else alert("Please fix the your entries");
             });
-            
-            $('#TermsLink').click(function(){
-                if(navigator.userAgent.indexOf("Chrome") != -1 )  $("#Terms").dialog("open");
+
+            $('#TermsLink').click(function () {
+                if (navigator.userAgent.indexOf("Chrome") != -1) $("#Terms").dialog("open");
                 else alert("Undefined function");
             });
-            $( "#SummaryMe" ).dialog({
+            $("#SummaryMe").dialog({
                 autoOpen: false,
                 show: {
                     effect: "fade",
@@ -82,44 +83,44 @@
                     duration: 1000
                 }
             });
-            $( "#Terms" ).dialog({
-                autoOpen: false                
+            $("#Terms").dialog({
+                autoOpen: false
             });
-            
-            $('#T1').click(function(){
+
+            $('#T1').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#security'>Security Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-            $('#T2').click(function(){
+            $('#T2').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#security'>Security Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-            $('#T3').click(function(){
+            $('#T3').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#system'>System/Functional Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-            $('#T4').click(function(){
+            $('#T4').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#system'>System/Functional Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-            $('#T5').click(function(){
+            $('#T5').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#system'>System/Functional Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-            $('#T6').click(function(){
+            $('#T6').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#system'>System/Functional Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-            $('#T7').click(function(){
+            $('#T7').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#compatibility'>Compatibility Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-            $('#T8').click(function(){
+            $('#T8').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#usability'>Usability Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-            $('#T9').click(function(){
+            $('#T9').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#usability'>Usability Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-            $('#T10').click(function(){
+            $('#T10').click(function () {
                 $(this).html(" <a href='QaTestTypes.html#usability'>Usability Testing</a>").removeClass('bugType').addClass('bugTypeText');
             });
-           
+
 
         });
-      </script>
+    </script>
 </head>
 <body>
 
