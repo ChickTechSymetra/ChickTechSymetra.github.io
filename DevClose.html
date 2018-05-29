@@ -18,6 +18,11 @@
                 hide: {
                     effect: "fold",
                     duration: 1000
+                },
+                position: {
+                    my: "right top",
+                    at: "left top",
+                    of: "#HelpChange"
                 }
             });
             $("#HelpChange").on("click", function () {
@@ -32,6 +37,11 @@
                 hide: {
                     effect: "fold",
                     duration: 1000
+                },
+                position: {
+                    my: "left center",
+                    at: "right bottom",
+                    of: "#HelpHtmlTags"
                 }
             });
             $("#HelpHtmlTags").on("click", function () {
@@ -46,6 +56,11 @@
                 hide: {
                     effect: "fold",
                     duration: 1000
+                },
+                position: {
+                    my: "left top",
+                    at: "right top",
+                    of: "#HelpHtml"
                 }
             });
             $("#HelpHtml").on("click", function () {
@@ -70,9 +85,9 @@
 
         <div class="PrevLink"><a href='Dev1.html'>Prev: Jazzier Pages</a></div>
         <div id="WhatChange" class="WhatIsBox" >Explanation here</div>
-        <div id="WhatIsHtmlTags" class="WhatIsBox" >There are plenty of free resources on the web to learn
-            HTML.  add links here</div>
-        <div id="WhatIsHtml" class="WhatIsBox" >HyperText Markup Language</div>
+        <div id="WhatIsHtmlTags" class="WhatIsBox" ><p>There are plenty of free resources on the web to learn
+            HTML.  <a href="http://ww3.www3schools.com/" target="_blank">www3schools</a> is one site you can try. </p></div>
+        <div id="WhatIsHtml" class="WhatIsBox" ><p>HyperText Markup Language</p></div>
     </section>
 </body>
 </html>
