@@ -8,6 +8,11 @@ html, body {
 h1 {
     color: #007dd7; font-size: 42px; font-weight: bold; margin-bottom: 10px;
 }
+h5 {
+    text-align: center;
+    color: #007dd7;
+    font-size: medium;
+}
 .flex-container {
     display: -webkit-flex;
     display: flex;  
