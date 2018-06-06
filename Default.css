@@ -327,5 +327,17 @@ a {
     text-align: left;
     background-color: #ffffcc;
 }
+.BlueSection {
+    background-color: #007dc3;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.GreenSection {
+    background-color: #8abf2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
 
