@@ -70,7 +70,7 @@
             </div>
         </div>
 
-        <div style="float: left; width: 540px; text-align: left;">
+        <div style="float: left; width: 580px; text-align: left;">
             <p class='instruction'>Click the sections below to see how to code these items</p><br /><br />
             <div id='codeAccordion'>
                 <h3>Text Input Field</h3>
@@ -100,7 +100,24 @@
                 <h3>Submit Button and Message</h3>
                 <p>
                     A button is simple to add to a page:  
-                    <span style="code">&lt;button id="ThatMe"&gt;That's Me&lt;/button&gt;</span>
+                    <span style="code">&lt;button id="ThatMe"&gt;That's Me&lt;/button&gt;</span><br/><br/>
+                    Next, we need to add some JavaScript inside our <span class="code">&lt;script&gt;</span> tags:
+                    <br/><br/><span class="code" style="font-size: 85%;">
+                        $(function () {  <br />
+                        &nbsp;//This function will show a message, summarizing the data<br />
+                        &nbsp;$("#ThatsMeButton").on("click", function () {<br />
+                        &nbsp;&nbsp;var s = "I am ";<br />
+                        &nbsp;&nbsp;s = s + $("#NickName").val() + ". ";<br />
+                        &nbsp;&nbsp;s = s  + "I'm lucky with number " + $("#LuckyNumber").val() + ". ";<br />
+                        &nbsp;&nbsp;s =  s + "My favorite color is " + $("#FavColor").val() + ". ";<br />
+                        &nbsp;&nbsp;s = s + "Feed me " + $('input[name=Snack]:checked').val() + "! ";<br />
+                        &nbsp;&nbsp;s = s + "Here's what I think is cool: " + $("#Quote").val();<br />
+                        <br />
+                        &nbsp;&nbsp;alert(s);  //An 'alert' creates the message<br />
+                        });
+                    </span><br/><br/>
+                    This will put all the data into a variable called 's'.  Then we'll use the 'alert' 
+                    command in Javascript to show the message.
                 </p>
             </div>
 

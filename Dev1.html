@@ -25,12 +25,12 @@
             $("#ThatMe").on("click", function () {
                 var color = $("#FavColor").val();
                 var contrast = invertColor(color, true);
-                var s = "<p style='background-color:" + color + "; color:" + contrast + ";'>";
-                s = s + "I am " + $("#NickName").val() + ". ";
-                s = s + "I'm lucky with the number " + $("#LuckyNumber").slider("value") + ". ";
-                s = s + "Feed me " + $('input[name=Snack]:checked').val() + "! ";
-                s = s + "Here's what I think is cool: " + $("#Quote").val();
-                s = s + "</p>";
+                var s = "<p style='background-color:" + color + "; color:" + contrast + ";'>" 
+                 + "I am " + $("#NickName").val() + ". "
+                 + "I'm lucky with the number " + $("#LuckyNumber").slider("value") + ". "
+                 + "Feed me " + $('input[name=Snack]:checked').val() + "! "
+                 + "Here's what I think is cool: " + $("#Quote").val()
+                 + "</p>";
 
                 $("#SummaryMe").html(s);
                 $("#SummaryMe").css('background-color', color);
@@ -140,7 +140,7 @@
             <div id='codeAccordion'>
                 <h3>Add a color picker</h3>
                 <p>
-                    This one is easy. On line 47, you have an input field for Favorite Color.
+                    This one is easy. Around line 57, you have an input field for Favorite Color.
                     Change the input type from "text" to "color". <br /><br />
                     <span class="code">
                         &lt;div&gt;<br />
@@ -152,7 +152,7 @@
                 <p>
                     To add a slider, we need two different changes: in the HTML, and some JavaScript.
                     <br /><br />
-                    Around line 44, we're going to replace the HTML for your input field of LuckyNumber.<br /><br />
+                    Around line 54, we're going to replace the HTML for your input field of LuckyNumber.<br /><br />
                     Old code: <br />
                     <span class='code'>&lt;div&gt;&lt;input type="text" id="LuckyNumber" min="0" max="100" /&gt;&lt;/div&gt;</span>
                     <br /><br />
@@ -165,7 +165,7 @@
                     </span><br /><br />
                     Next, we'll put some JavaScript in your page.<br /><br />  JavasScript is usually added between
                     the &lt;script&gt; tags in the &lt;head&gt; section on the top of the page.
-                    In this case, we've already put the code you need on lines 26-38.  You
+                    In this case, we've already put the code you need on lines 26-37.  You
                     just need to "uncomment" them by removing the comment tags /* and */.
                     This is what the script looks like:<br /><br />
                     <span style="font-style: italic;">Inside the tag:</span><br />
@@ -194,13 +194,47 @@
                     <span class="code">&lt;div id="SummaryMe" title="This is Me"&gt;&lt;/div&gt; </span>
                     <br /><br />
                     Next: the jQuery script that goes between the &lt;script&gt; tags.<br /><br />
-                    Do you see lines 13 through 23?  They create the message box.  We'll make changes there.
+                    Do you see lines 14 through 23?  They create the message box.  We'll make changes there.
                     <br /><br />
-                    <!--<img src="tbd" />-->
-                    <br /><br />
-                    Now we'll 
-
-
+                    In the section where we define the click event for our button (around line 14), let's replace
+                    the function with the code below.  Notice the yellow highlighted areas--that is how we'll
+                    get the dialog box to show in the color that was selected.
+                    <br/><br/>
+                         <span class="code" style="font-size: 84%">
+                             $("#ThatsMeButton").on("click", function () {<br />
+                             &nbsp; &nbsp;<span style="background-color: yellow;">var color = $("#FavColor").val();</span><br />
+                             &nbsp; &nbsp;var s = "&lt;p style='background-color:" + color + ";'&gt;"  <br />
+                             &nbsp; &nbsp; &nbsp; + "I am " + $("#NickName").val() + ". "<br />
+                             &nbsp; &nbsp; &nbsp; + "I'm lucky with the number " <br />
+                             &nbsp; &nbsp; &nbsp; + $("#LuckyNumber").slider("value") + ". "<br />
+                             &nbsp; &nbsp; &nbsp; + "Feed me " + $('input[name=Snack]:checked').val() + "!"<br />
+                             &nbsp; &nbsp; &nbsp; + " Here's what I think is cool: " + $("#Quote").val()<br />
+                             &nbsp; &nbsp; &nbsp; + "&lt;/p&gt;";<br /><br />
+                             &nbsp; &nbsp;//put the contents of s into our div<br/>
+                             &nbsp; &nbsp;$("#SummaryMe").html(s);<br />
+                             &nbsp; &nbsp;$("#SummaryMe").css('background-color', color);<br />
+                             &nbsp; &nbsp;//then open the dialog<br />
+                             &nbsp; &nbsp;$("#SummaryMe").dialog("open");<br />
+                             });
+                         </span>
+                    <br/><br/>
+                    The last piece is that we'll add a whole new function for our dialog box.  Just before the 
+                    closing <span class="code">&lt;script&gt;</span> tag, add this function: <br/><br/>
+                                                                                                  <span class="code">
+                                                                                                      $(function () { <br />
+                                                                                                      &nbsp; &nbsp;$("#SummaryMe").dialog({ <br />
+                                                                                                      &nbsp; &nbsp;&nbsp; &nbsp;autoOpen: false,  <br />
+                                                                                                      &nbsp; &nbsp;&nbsp; &nbsp;show: { <br />
+                                                                                                      &nbsp; &nbsp;&nbsp; &nbsp; effect: "bounce", <br />
+                                                                                                      &nbsp; &nbsp;&nbsp; &nbsp; duration: 2500 <br />
+                                                                                                      &nbsp; &nbsp;}, <br />
+                                                                                                      &nbsp; &nbsp;&nbsp; &nbsp;hide: { <br />
+                                                                                                      &nbsp; &nbsp;&nbsp; &nbsp;  effect: "explode", <br />
+                                                                                                      &nbsp; &nbsp;&nbsp; &nbsp;  duration: 1000 <br />
+                                                                                                      &nbsp; &nbsp;&nbsp; &nbsp;} <br />
+                                                                                                      &nbsp; &nbsp;}); <br />
+                                                                                                      }); <br />
+                                                                                                  </span>
 
                 </p>
             </div>
