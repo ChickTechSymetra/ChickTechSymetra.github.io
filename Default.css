@@ -75,11 +75,13 @@ h4 {
 .smalltext {
     font-size: small; margin-bottom: 10px;
 }
-footer {
+#footer {
     font-family: Verdana, Tahoma;
     font-size: x-small;
-    margin: 20px 40px 40px 10px;
+    margin-top: 50px;
+    margin-bottom: 0;
     text-align: center;
+    color: white;
 }
 
 section {
@@ -163,13 +165,7 @@ input {
     flex: 5 0px;
 }
 
-footer {
-    /*-webkit-order: 3;
-        order: 3;*/
-        bottom: 0px;
-        margin-top: 25px;
-        margin-left: 20px;
-    }
+
 .prettytbl {
     width: 800px;
     margin: auto;
@@ -258,21 +254,23 @@ a {
     padding: 20px;
 }
 .NextLink a{
-    margin: 10px 25px 20px;
-    float: right;
+    margin-right: 50px;
+    margin-left: 50px;
     text-decoration: none;
+    background-color: #8abf2e;
+    color: white;
+    padding: 15px;
+    border: solid 3px #dbc46c;
+    border-radius: 7px;
+    width: 150px;
+    text-align: center;
+    display: inline-block;
 }
-.PrevLink a {
-    margin: 10px 25px 20px;
-    float: left;
-    text-decoration: none;
-}
+
 .NextLink a:hover {
-    text-decoration: underline;
+    background-color: #70ae1d;
 }
-.PrevLink a:hover {
-    text-decoration: underline;
-}
+
 .Quiz {
     text-align: left;
     
@@ -337,7 +335,10 @@ a {
     background-color: #8abf2e;
     color: white;
     text-align: center;
+    vertical-align: middle;
     padding: 20px;
+    height: 140px;
+    bottom: 0;
 }
 
 
