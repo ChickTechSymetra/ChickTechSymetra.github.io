@@ -86,6 +86,7 @@ h4 {
 
 section {
     text-align: center;
+    margin: 0;
 }
 nav {
     background-color: white;
@@ -332,6 +333,9 @@ input {
     color: white;
     text-align: center;
     padding: 20px;
+    width: 100%;
+    margin: 0;
+           
 }
 .GreenSection {
     background-color: #8abf2e;
