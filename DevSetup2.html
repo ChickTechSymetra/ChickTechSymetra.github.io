@@ -2,13 +2,30 @@
 <html>
 <head>
     <title>Customize Pages</title>
-     <link rel="stylesheet" href="Default.css?v1.3" >
+    <link rel="stylesheet" href="Default.css?v1.3">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <link rel="icon" href="images/Chicktech-Symetra-Icon.png">
+    <script>
+        $(function () {
+            $('#c3').addClass("activeTab");
+        });
+    </script>
 </head>
-<body>
-<object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
-<div style="text-align: center;">
-    <h1 style='margin: 25px;'>Customize Some Pages</h1>
+            <body>
+            <object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
+            <div style="text-align: center;">
+            <h1 style='margin: 25px;'>Step 3 - Customize Some Pages</h1>
+            <div id="Breadcrumb">
+            <ul>
+            <li>&nbsp; &nbsp; &nbsp; &nbsp; <a href="DevWelcome.html" id="c1" >Step 1:Today's Goals</a></li>
+            <li><a href="DevSetup.html" id="c2">Step 2: Set Up</a></li>
+            <li><a href="DevSetup2.html" id="c3" >Step 3: Customize</a></li>
+            <li><a href="DevCodeLook.html" id="c4" >Step 4: Code</a></li>
+            <li><a href="Dev0.html" id="c5" >Step 5: Input</a></li>
+            <li><a href="Dev1.html" id="c6" >Step 6: Jazzier Input</a></li>
+            <li><a href="DevClose.html" id="c7" >Step 7: Wrap up</a> &nbsp; &nbsp; &nbsp; &nbsp; </li>
+        </ul>
+    </div>
         <div style="display: inline-block; padding: 25px; text-align: left; max-width: 1000px;">
     
             <p>
@@ -34,8 +51,8 @@
             
             <div class="GreenSection">
                 <br /><br />
-                <span class="NextLink"><a href='DevSetUp.html'>< Previous</a></span>
-                <span class="NextLink"><a href='DevCodeLook.html'>Next ></a></span>
+                <span class="NextLink"><a href='DevSetUp.html' style="color: white;">< Previous</a></span>
+                <span class="NextLink"><a href='DevCodeLook.html' style="color: white;">Next ></a></span>
                 <div id="footer">Copyright &copy; 2018 Symetra Life Insurance Company, Symetra Life Insurance Company, 777 108th Ave NE, Suite 1200, Bellevue, WA 98004. All rights reserved. Symetra&reg; is a registered service mark of Symetra Life Insurance Company.</div>
             </div>
             

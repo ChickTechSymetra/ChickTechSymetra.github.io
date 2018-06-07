@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $(function () {
+            $('#c2').addClass("activeTab");
             $('#DevLink').addClass("activeTab");
             $("#WhatIsGitHub").dialog({
                 autoOpen: false,
@@ -56,82 +57,94 @@
             <object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
             
             <div style="text-align: center;">
-                <div style="display: inline-block; padding: 25px; text-align: left; max-width: 800px;">
-                    <h1 style='margin-bottom: 40px;'>Set Up My Account</h1>
+                
+                <div style="display: inline-block; padding: 0 25px; text-align: left; max-width: 1000px;">
+                    <h1 style='margin-bottom: 40px;'>Step 2 - Set Up My Account</h1>
+                    <div id="Breadcrumb">
+                        <ul>
+                            <li>&nbsp; &nbsp; &nbsp; &nbsp; <a href="DevWelcome.html" id="c1" >Step 1:Today's Goals</a></li>
+                            <li><a href="DevSetup.html" id="c2">Step 2: Set Up</a></li>
+                            <li><a href="DevSetup2.html" id="c3" >Step 3: Customize</a></li>
+                            <li><a href="DevCodeLook.html" id="c4" >Step 4: Code</a></li>
+                            <li><a href="Dev0.html" id="c5" >Step 5: Input</a></li>
+                            <li><a href="Dev1.html" id="c6" >Step 6: Jazzier Input</a></li>
+                            <li><a href="DevClose.html" id="c7" >Step 7: Wrap up</a> &nbsp; &nbsp; &nbsp; &nbsp; </li>
+                        </ul>
+                    </div>
                     <p>
-                        First, we'll create an account with GitHub.  (Unless you already have one.)  Note: you will need
+                        First, we'll create an account with GitHub. (Unless you already have one.) Note: you will need
                         an email address that you can access to confirm your account.)
                         GitHub is a cloud repository for you code, that will also let you publish a simple website for free.
                     </p>
                     <p>
                         <span class='Step'>1</span>Go to <a href="https://github.com/" target="_blank"> https://github.com/</a>, and click the button to
                         <span class='greenButton'>Sign up for GitHub</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <img id="HelpGitHub" src="images/whatGitHub.png" style="cursor: pointer; vertical-align: middle;" /><br /><br />
+                        <img id="HelpGitHub" src="images/whatGitHub.png" style="cursor: pointer; vertical-align: middle;"/><br/><br/>
                     </p>
                     <p>
-                        <span class='Step'>2</span>Create an account.  Your username will be the name on your website, so consider what you would like...
+                        <span class='Step'>2</span>Create an account. Your username will be the name on your website, so consider what you would like...
                         <div style='margin-left: 75px'>CodeChick ?</div>
                         <div style='margin-left: 75px'>GirlsLoveTech ?</div>
-                        <div style='margin-left: 75px'>MyNameOnTheWeb ?</div><br />
+                        <div style='margin-left: 75px'>MyNameOnTheWeb ?</div><br/>
                         <div style='margin-left: 50px'>Have some fun with this!</div>
                     </p>
-                    <img style='margin-left: 50px' src='images/SignUp.PNG' alt='GitUpSignUpSample' />
-                    <p><span class='Step'>3</span>Choose 'Unlimited public repositories for free', and click Continue.  </p>
-                    <img style='margin-left: 50px' src='images/Free.png' alt='Unlimited Plan' />
-                    <p style='margin-left: 50px'>On the next page,  you can fill in your experience, or just skip it and click <span class='greenButton'> Submit </span></p><br /><br />
+                    <img style='margin-left: 50px' src='images/SignUp.PNG' alt='GitUpSignUpSample'/>
+                    <p><span class='Step'>3</span>Choose 'Unlimited public repositories for free', and click Continue. </p>
+                    <img style='margin-left: 50px' src='images/Free.png' alt='Unlimited Plan'/>
+                    <p style='margin-left: 50px'>On the next page, you can fill in your experience, or just skip it and click <span class='greenButton'> Submit </span></p><br/><br/>
                     <p>
-                        <span class='Step'>4</span>You'll need to go to your email address and verify the account.  Just click the link
-                        that GitHub sends you.<br /><br />
+                        <span class='Step'>4</span>You'll need to go to your email address and verify the account. Just click the link
+                        that GitHub sends you.<br/><br/>
                     </p>
                     <p>
-                        <span class='Step'>5</span>Now that we have an account, we'll need to set it up.  Go to <a href='https://GitHub.com' target='_blank'>https://GitHub.com</a>, and sign in.<br />
-                    </p><br />
+                        <span class='Step'>5</span>Now that we have an account, we'll need to set it up. Go to <a href='https://GitHub.com' target='_blank'>https://GitHub.com</a>, and sign in.<br/>
+                    </p><br/>
                     <p>
-                        <span class='Step'>6</span>You'll be asked to create a Repository, where your web pages will be stored.  This step is very important!  You can have lots
-                        of repositories, but you can only have one that will publish to your own website.  That repository name needs to be your <strong>Username.github.io</strong>
+                        <span class='Step'>6</span>You'll be asked to create a Repository, where your web pages will be stored. This step is very important! You can have lots
+                        of repositories, but you can only have one that will publish to your own website. That repository name needs to be your <strong>Username.github.io</strong>
                     </p>
-                    <img style='margin-left: 50px' src='images/Repo.png' alt='Creating a repository' />
+                    <img style='margin-left: 50px' src='images/Repo.png' alt='Creating a repository'/>
                     <img src="images/whatRepository.png" alt="What is a repository?"
-                         id="HelpRepository" style="cursor: pointer; margin-left: 25px; vertical-align: top;" />
+                         id="HelpRepository" style="cursor: pointer; margin-left: 25px; vertical-align: top;"/>
 
                     <p>
-                        <span class='Step'>7</span>Done?  OK, now we're going to switch to your machine, where we already have
-                        your commands set up.  On your laptop, go to C:\WorkshopFiles.  There is a file there called SetUpGit that
+                        <span class='Step'>7</span>Done? OK, now we're going to switch to your machine, where we already have
+                        your commands set up. On your laptop, go to C:\WorkshopFiles. There is a file there called SetUpGit that
                         we need to edit.
                     </p>
-                    <img style='margin-left: 50px' src="images/Files.png" alt='Right-click on SetUpGit.cmd' /><br />
+                    <img style='margin-left: 50px' src="images/Files.png" alt='Right-click on SetUpGit.cmd'/><br/>
                     <p>
-                        <span class='Step'>8</span>On the fifth line in the file, there are two places where is says "UserName".  Change
-                        this to your actual Username that you set up in Git Hub.  Then save and close the file.
+                        <span class='Step'>8</span>On the fifth line in the file, there are two places where is says "UserName". Change
+                        this to your actual Username that you set up in Git Hub. Then save and close the file.
                     </p>
-                    <img style='margin-left: 50px' src="images/EditCommand.png" alt='file details' /><br /><br /><br />
-                    <p><span class='Step'>9</span>Now run the file by double-clicking it.  Did it work?<br /><br /></p>
+                    <img style='margin-left: 50px' src="images/EditCommand.png" alt='file details'/><br/><br/><br/>
+                    <p><span class='Step'>9</span>Now run the file by double-clicking it. Did it work?<br/><br/></p>
                     <p>
-                        <span class='Step'>10</span>Last step: Go back to GitHub and click on your username.  It should refresh the page,
+                        <span class='Step'>10</span>Last step: Go back to GitHub and click on your username. It should refresh the page,
                         and list the files we've added.
                     </p>
-                    <img style='margin-left: 50px' src="images/ClickToRefresh.png" alt='file details' /><br />
-                    <img style='margin-left: 50px' src="images/FirstCommitFiles.png" alt='file details' /><br /><br />
-                    <p>Wow, that was a lot to set up!  But now we can have some fun.</p>
+                    <img style='margin-left: 50px' src="images/ClickToRefresh.png" alt='file details'/><br/>
+                    <img style='margin-left: 50px' src="images/FirstCommitFiles.png" alt='file details'/><br/><br/>
+                    <p>Wow, that was a lot to set up! But now we can have some fun.</p><br/>
                 </div><!-- end of div putting everything in the center-->
 
-                    <div class="GreenSection">
-                        <br /><br />
-                        <span class="NextLink"><a href='DevWelcome.html'>< Previous</a></span>
-                        <span class="NextLink"><a href='DevSetup2.html'>Next ></a></span>
-                        <div id="footer">Copyright &copy; 2018 Symetra Life Insurance Company, Symetra Life Insurance Company, 777 108th Ave NE, Suite 1200, Bellevue, WA 98004. All rights reserved. Symetra&reg; is a registered service mark of Symetra Life Insurance Company.</div>
-                    </div>
-                    <div id="WhatIsGitHub" class="WhatIsBox">
-                        GitHub is a website and platform that helps you host
-                        and review web pages, and build your software.
-                    </div>
-                    <div id="WhatIsRepository" class="WhatIsBox">
-                        A repository is a place to store your code.  Today
-                        we're storing our code on GitHub.  You can create
-                        multiple repositories on your GitHub account
-                        so you can put your projects in separate spaces.
-                    </div>
+                <div id="NextLinks" class="GreenSection">
+                    <br/><br/>
+                    <span class="NextLink"><a href='DevWelcome.html' style="color: white;">< Previous</a></span>
+                    <span class="NextLink"><a href='DevSetup2.html' style="color: white;">Next ></a></span>
+                    <div id="footer">Copyright &copy; 2018 Symetra Life Insurance Company, Symetra Life Insurance Company, 777 108th Ave NE, Suite 1200, Bellevue, WA 98004. All rights reserved. Symetra&reg; is a registered service mark of Symetra Life Insurance Company.</div>
                 </div>
+                <div id="WhatIsGitHub" class="WhatIsBox">
+                    GitHub is a website and platform that helps you host
+                    and review web pages, and build your software.
+                </div>
+                <div id="WhatIsRepository" class="WhatIsBox">
+                    A repository is a place to store your code. Today
+                    we're storing our code on GitHub. You can create
+                    multiple repositories on your GitHub account
+                    so you can put your projects in separate spaces.
+                </div>
+            </div>
     
 
 
