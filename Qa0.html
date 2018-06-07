@@ -9,6 +9,7 @@
     <script>
         //these are individual field edits, which will trigger when someone exits the field.
         $(function () {
+            $('#c2').addClass("activeTab");
             $("#UserName").on("focusout", function () {
                 var val = this.value;
                 var pattern = new RegExp('^[A-Za-z0-9._\\-\\s\\@]{3,25}$');
@@ -125,9 +126,17 @@
 <body>
 
     <object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
-    <section>
+    <section style="text-align: center;">
         
         <h1>Find the Bugs</h1>
+        <div id="Breadcrumb" style="text-align: center;">
+            <ul>
+                <li>&nbsp; &nbsp; &nbsp; &nbsp; <a href="QaWelcome.html" id="c1" >Today's Goals</a></li>
+                <li><a href="Qa0.html" id="c2">Find the Bugs</a></li>
+                <li><a href="QaTestTypes.html" id="c3" >Testing Definitions</a></li>
+                <li><a href="QaSdlc.html" id="c4" >SDLC</a> &nbsp; &nbsp; &nbsp; &nbsp; </li>
+            </ul>
+        </div>
         <div style="float: left;">
             <p class="instruction">~ Test this page below, and find the bugs.</p>
             <div class="leftPageBox" id="FirstPage" >
@@ -180,11 +189,14 @@
         </div>
 
     </section>
-    <div style="clear: both;"></div>
-    <div class="PrevLink"><br/><br/>
-            <a href="QaWelcome.html" tabindex='9'>Back to Intro</a> </div>
-    <div class="NextLink"><a href="QaTestTypes.html" tabindex='10'>Next: Testing Definitions</a>
-    </div>
+<div style="clear: both;"></div>
+<div id="NextLinks" class="GreenSection">
+    <br/><br/>
+    <span class="NextLink"><a href='QaWelcome.html' style="color: white;">< Previous</a></span>
+    <span class="NextLink"><a href='QaTestTypes.html' style="color: white;">Next ></a></span>
+    <div id="footer">Copyright &copy; 2018 Symetra Life Insurance Company, Symetra Life Insurance Company, 777 108th Ave NE, Suite 1200, Bellevue, WA 98004. All rights reserved. Symetra&reg; is a registered service mark of Symetra Life Insurance Company.</div>
+</div>
+
 
     <div id="Terms">
             <h3>Terms and Conditions</h3>

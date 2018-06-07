@@ -8,7 +8,8 @@
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
       <script>
         //these are individual field edits, which will trigger when someone exits the field.
-        $(function () {
+          $(function () {
+              $('#c4').addClass("activeTab");
             $("#mapReq").on("click", function () {
                 $('#definition').html(
                     "<p class='Definition'><strong>Requirements Analysis:</strong> The requirements gathering and analysis phase is the first phase. The most important phase of the SDLC is the requirement gathering and analysis phase because this is when the project team begins to understand what the customer wants from the project. </p>");
@@ -41,16 +42,26 @@
 
     <object name="Top" type="text/html" data="Nav.html" style="width: 100%"></object>
     <section>
-        
+
         <h1>Software Development Life Cycle (SDLC)</h1>
-        <p>Below are the phases of the Software Development Life Cycle.  Click on each box
-            to see a definition of the phase. </p>
+        <div id="Breadcrumb" style="text-align: center;">
+            <ul>
+                <li>&nbsp; &nbsp; &nbsp; &nbsp; <a href="QaWelcome.html" id="c1">Today's Goals</a></li>
+                <li><a href="Qa0.html" id="c2">Find the Bugs</a></li>
+                <li><a href="QaTestTypes.html" id="c3">Testing Definitions</a></li>
+                <li><a href="QaSdlc.html" id="c4">SDLC</a> &nbsp; &nbsp; &nbsp; &nbsp; </li>
+            </ul>
+        </div>
+        <p>
+            Below are the phases of the Software Development Life Cycle.  Click on each box
+            to see a definition of the phase.
+        </p>
         <div>
-            <img src="images/SdlcBlue.png" usemap="sdlcmap" width="800" style="float: left; padding: 20px 0 0 40px;"/>
+            <img src="images/SdlcBlue.png" usemap="sdlcmap" width="800" style="float: left; padding: 20px 0 0 40px;" />
             <map name="sdlcmap">
-                <area id="mapReq" shape="rect" coords="60, 45, 235, 95"/>
+                <area id="mapReq" shape="rect" coords="60, 45, 235, 95" />
                 <area id="mapSys" shape="rect" coords="170, 115, 325, 170" />
-                <area id="mapImp" shape="rect" coords="280, 190, 435, 235"/>
+                <area id="mapImp" shape="rect" coords="280, 190, 435, 235" />
 
                 <area id="mapTest" shape="rect" coords="390, 250, 555, 300" />
                 <area id="mapDeploy" shape="rect" coords="495, 325, 655, 377" />
@@ -59,9 +70,14 @@
             <span id="definition" style="float: left; width: 300px; margin: 20px;">&nbsp;</span>
         </div>
     </section>
-    <div style="clear: both;"></div>
-    <div class="PrevLink"><br/><br/>
-            <a href="QaTestTypes.html" tabindex='9'>Back to Test Definitions</a> </div>
+<div style="clear: both;">
+    <br/><br/>
+</div>
+<div id="NextLinks" class="GreenSection">
+    <br/><br/>
+    <span class="NextLink"><a href='QaTestTypes.html' style="color: white;">< Previous</a></span>
+    <div id="footer">Copyright &copy; 2018 Symetra Life Insurance Company, Symetra Life Insurance Company, 777 108th Ave NE, Suite 1200, Bellevue, WA 98004. All rights reserved. Symetra&reg; is a registered service mark of Symetra Life Insurance Company.</div>
+</div>
 
     
 
