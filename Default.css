@@ -355,13 +355,17 @@ a:-webkit-any-link {
     display: flex;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
-            -webkit-flex-flow: row wrap;
-        flex-flow: row wrap;
-        text-align: center;
-        justify-content: space-between;
     text-align: center;
+    justify-content: space-between;
 }
-    #Breadcrumb ul {
+#Breadcrumb > * {
+    padding: 15px;
+    -webkit-flex: 1 100%;
+    flex: auto;
+    flex-direction: row;
+    font-size: small;
+}
+    /*#Breadcrumb ul {
         padding: 15px;
         -webkit-flex: 1 100%;
         display: -webkit-flex;
@@ -372,8 +376,9 @@ a:-webkit-any-link {
         justify-content: space-between;
         list-style-type: none;
         font-size: small;
-    }
-    #Breadcrumb ul a, a:visited {
+        flex-direction: row;
+    }*/
+    #Breadcrumb a, a:visited {
         color: #007dd7;
         font-size: small;
     }
