@@ -312,6 +312,12 @@ input {
     color: brown;
     font-family: Consolas, Courier;
 }
+.command {
+    color: black;
+    font-weight: bold;
+    font-size: 110%;
+    font-family: Consolas, Courier;
+}
 .TestType {
     font-weight: bold;
 }
